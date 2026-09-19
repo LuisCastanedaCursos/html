@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS LAB — 20 niveles</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1b2a;--card:#12263a;--text:#eef6ff;--muted:#9fb3c8;--accent:#4cc9f0;--ok:#52b788;--bad:#ef476f;--border:#29445f}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#06101c,#10243a);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
+main{max-width:1180px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.tag{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.08em}
+h1{margin:6px 0;font-size:clamp(25px,4vw,42px)}p{line-height:1.55}.stats{display:flex;gap:8px;flex-wrap:wrap}.pill{background:var(--card);border:1px solid var(--border);padding:9px 12px;border-radius:12px}
+.progress{height:9px;background:#132b42;border-radius:20px;overflow:hidden;margin:18px 0}.bar{height:100%;background:var(--accent);width:5%;transition:.3s}
+.grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px}.panel{background:rgba(13,27,42,.94);border:1px solid var(--border);border-radius:16px;padding:18px}
+.mission,.example{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px;margin-top:14px}.small{font-size:12px;color:var(--muted)}
+.editor{background:#06101a;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:12px}.editor-head{padding:10px 14px;background:#14283b;font-weight:700}.code{padding:15px;font-family:Consolas,monospace;white-space:pre-wrap;overflow:auto}
+.line{display:flex;gap:7px;align-items:center;padding:0 15px 15px;font-family:Consolas,monospace}.line input{flex:1;min-width:80px;background:#0a1724;color:#fff;border:1px solid #3a5872;border-radius:8px;padding:11px;font:inherit}
+.preview{margin-top:16px;background:white;color:#111;border-radius:15px;overflow:hidden}.preview-head{background:#dfe8ef;padding:10px 14px;color:#17202a;font-weight:800}.browser{padding:20px;min-height:230px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}button{border:1px solid var(--border);background:var(--card);color:#fff;padding:11px 15px;border-radius:10px;cursor:pointer;font-weight:750}button.primary{background:var(--accent);color:#04212c;border-color:transparent}.feedback{margin-top:12px;font-weight:750}
+.map{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.lv{width:34px;height:34px;border:1px solid var(--border);border-radius:50%;display:grid;place-items:center;font-size:12px}.done{background:var(--accent);color:#03222d}.now{outline:2px solid white}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main>
+<div class="top"><div><div class="tag">VIDEOJUEGO EDUCATIVO · CSS</div><h1>CSS LAB</h1><p>Escribe CSS real, observa el cambio en el HTML y supera los 20 niveles. Si pierdes las 3 vidas, vuelves al nivel 1.</p></div>
+<div class="stats"><div class="pill">❤️ <b id="lives">3</b></div><div class="pill">⭐ <b id="score">0</b></div><div class="pill">🏆 Nivel <b id="level">1</b>/20</div></div></div>
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div class="grid"><section class="panel"><div class="tag" id="rank"></div><h2 id="title"></h2><p id="explain"></p><div class="mission"><b>🎯 MISIÓN</b><p id="mission"></p></div><div class="example"><b>💡 EJEMPLO</b><pre id="example"></pre></div><p class="small">Analiza el ejemplo y completa el valor de la propiedad en style.css.</p></section>
+<section><div class="editor"><div class="editor-head">index.html · solo lectura</div><pre class="code">&lt;h1&gt;Mi primera página web&lt;/h1&gt;
+&lt;p&gt;Estoy aprendiendo CSS&lt;/p&gt;
+&lt;div class="caja"&gt;Esta es una caja HTML&lt;/div&gt;
+&lt;div class="menu"&gt;HTML · CSS · WEB&lt;/div&gt;
+&lt;button class="boton"&gt;Mi botón&lt;/button&gt;</pre></div>
+<div class="editor"><div class="editor-head">style.css · escribe tú</div><div class="code" id="selector"></div><div class="line"><span id="property"></span><span>:</span><input id="input" autocomplete="off" spellcheck="false"><span>;</span></div><div class="code" style="padding-top:0">}</div></div></section></div>
+<div class="preview"><div class="preview-head">🌐 RESULTADO EN VIVO</div><div class="browser"><div id="page"><h3 id="dTitle" style="font-size:25px;margin:0 0 12px">Mi primera página web</h3><p id="dText">Estoy aprendiendo CSS modificando esta página.</p><div id="dBox" style="padding:12px;border:2px solid #333;margin:10px 0">Esta es una caja HTML</div><div id="dMenu" style="margin-top:12px"><span>HTML</span> <span>CSS</span> <span>WEB</span></div><button id="dButton" style="margin-top:15px;padding:9px 14px">Mi botón</button></div></div></div>
+<div class="actions"><button class="primary" id="check">✓ Comprobar CSS</button><button id="reset">↻ Restablecer</button><button id="hint">💡 Pista</button></div><div id="feedback" class="feedback"></div><div id="map" class="map"></div>
+</main>
+<script>
+const L=[
+["Color","color","color cambia el color del texto.","Haz que el título sea rojo.","h1 { color: blue; }","red","dTitle","color","Prueba red."],
+["Fondo","background-color","Cambia el fondo de un elemento.","Pon la caja en lightblue.",".caja { background-color: yellow; }","lightblue","dBox","backgroundColor","Usa lightblue."],
+["Tamaño","font-size","Controla el tamaño de las letras.","Haz el párrafo de 20px.","p { font-size: 18px; }","20px","dText","fontSize","Número + px."],
+["Negrita","font-weight","Controla el grosor del texto.","Pon el párrafo en 700.","p { font-weight: 700; }","700","dText","fontWeight","700 suele ser negrita."],
+["Alineación","text-align","Alinea el contenido textual.","Centra el título.","h1 { text-align: center; }","center","dTitle","textAlign","Usa center."],
+["Ancho","width","Define el ancho.","Pon la caja al 70%.",".caja { width: 50%; }","70%","dBox","width","70%."],
+["Margin","margin","Espacio exterior al borde.","Pon margin de 25px.",".caja { margin: 10px; }","25px","dBox","margin","Espacio exterior."],
+["Padding","padding","Espacio entre contenido y borde.","Pon padding de 30px.",".caja { padding: 15px; }","30px","dBox","padding","Espacio interior."],
+["Border","border","Define grosor, estilo y color.","Usa 4px solid blue.",".caja { border: 2px solid red; }","4px solid blue","dBox","border","grosor estilo color."],
+["Border radius","border-radius","Redondea las esquinas.","Redondea 20px.",".caja { border-radius: 8px; }","20px","dBox","borderRadius","20px."],
+["Opacity","opacity","Controla transparencia entre 0 y 1.","Pon el párrafo en 0.5.","p { opacity: .8; }","0.5","dText","opacity","Mitad de opacidad."],
+["Flexbox","display","display:flex activa Flexbox.","Convierte el menú en flex.",".menu { display: flex; }","flex","dMenu","display","flex."],
+["Dirección Flex","flex-direction","row crea fila; column crea columna.","Pon el menú en column.",".menu { flex-direction: row; }","column","dMenu","flexDirection","Lo contrario de row."],
+["Gap","gap","Separa hijos de flex/grid.","Pon gap de 20px.",".menu { gap: 10px; }","20px","dMenu","gap","20px."],
+["Justify content","justify-content","Distribuye elementos en el eje principal.","Usa space-between.",".menu { justify-content: center; }","space-between","dMenu","justifyContent","space-between."],
+["Sombra","box-shadow","Añade una sombra a una caja.","Usa 4px 4px 10px gray.",".caja { box-shadow: 2px 2px 5px gray; }","4px 4px 10px gray","dBox","boxShadow","X Y blur color."],
+["Transform","transform","Permite rotar, escalar o mover.","Rota el botón 5 grados.",".boton { transform: rotate(10deg); }","rotate(5deg)","dButton","transform","rotate(5deg)."],
+["Cursor","cursor","Cambia el puntero.","Usa pointer en el botón.",".boton { cursor: pointer; }","pointer","dButton","cursor","pointer."],
+["Grid","display","display:grid activa CSS Grid.","Convierte el menú en grid.",".menu { display: grid; }","grid","dMenu","display","grid."],
+["Jefe final: columnas","grid-template-columns","Define columnas de Grid.","Crea 3 columnas iguales.",".menu { grid-template-columns: repeat(2, 1fr); }","repeat(3, 1fr)","dMenu","gridTemplateColumns","repeat(3, 1fr)."]
+];
+let n=0,lives=3,score=0;
+const $=x=>document.getElementById(x);const ids=["dTitle","dText","dBox","dMenu","dButton"],base={};ids.forEach(x=>base[x]=$(x).getAttribute("style")||"");
+function restore(){ids.forEach(x=>$(x).setAttribute("style",base[x]));if(n>=12&&n<=14)$("dMenu").style.display="flex";if(n===19)$("dMenu").style.display="grid"}
+function sel(){return L[n][6]==="dTitle"?"h1":L[n][6]==="dText"?"p":L[n][6]==="dBox"?".caja":L[n][6]==="dButton"?".boton":".menu"}
+function draw(){restore();let x=L[n];$("level").textContent=n+1;$("lives").textContent=lives;$("score").textContent=score;$("bar").style.width=(n+1)*5+"%";$("rank").textContent=n<5?"INICIACIÓN":n<10?"BOX MODEL":n<15?"FLEXBOX":n<19?"AVANZADO":"JEFE FINAL";$("title").textContent=x[0];$("explain").textContent=x[2];$("mission").textContent=x[3];$("example").textContent=x[4];$("selector").textContent=sel()+" {";$("property").textContent=x[1];$("input").value="";$("feedback").textContent="";map()}
+function live(){restore();let v=$("input").value.trim();if(v)try{$(L[n][6]).style[L[n][7]]=v}catch(e){}}
+function norm(v){return v.trim().toLowerCase().replace(/\\s+/g," ")}
+function check(){if(norm($("input").value)===norm(L[n][5])){score+=100+n*15;$("feedback").textContent="✅ Correcto. El cambio CSS funciona.";if(n===19){setTimeout(()=>alert("🏆 ¡Completaste los 20 niveles! Puntuación: "+score),250);return}n++;setTimeout(draw,450)}else{lives--;$("lives").textContent=lives;$("feedback").textContent="❌ No cumple la misión. Revisa propiedad, valor y unidad.";if(lives<=0){setTimeout(()=>{alert("GAME OVER. Vuelves al nivel 1.");n=0;lives=3;score=0;draw()},400)}}}
+function map(){let m=$("map");m.innerHTML="";L.forEach((_,i)=>{let e=document.createElement("span");e.className="lv "+(i<n?"done ":"")+(i===n?"now":"");e.textContent=i+1;m.appendChild(e)})}
+$("input").addEventListener("input",live);$("input").addEventListener("keydown",e=>{if(e.key==="Enter")check()});$("check").onclick=check;$("reset").onclick=()=>{restore();$("input").value=""};$("hint").onclick=()=>$("feedback").textContent="💡 "+L[n][8];draw();
+</script></body></html>
