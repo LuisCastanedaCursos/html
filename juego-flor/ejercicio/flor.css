@@ -1,0 +1,86 @@
+/* 1. Cada regla tiene un selector y, entre llaves, instrucciones.
+   body selecciona el cuerpo de la página. Una propiedad y su valor
+   se separan con : y cada instrucción termina con ; */
+body { margin:0; padding:24px; background:#f6f3e9; color:#173e32; font-family:system-ui,sans-serif; text-align:center; }
+a { color:#255c43; } .control { display:block; margin:18px; }
+/* relative hace de la escena una referencia para colocar piezas.
+   vh representa una fracción de la altura de la ventana. */
+.escena { position:relative; height:70vh; min-height:400px; overflow:hidden; }
+/* 2. El punto selecciona una clase. absolute permite colocar una pieza
+   con left (distancia desde la izquierda) y top (desde arriba).
+   El grupo mide 0 porque usamos su esquina como punto central. */
+.corona { position:absolute; left:50%; top:40%; width:0; height:0; }
+/* 3. Dibujamos una caja, la pintamos y redondeamos sus esquinas.
+   px son píxeles. % es un porcentaje. yellow significa amarillo. */
+.petalo { position:absolute; width:54px; height:100px; background:yellow;
+  border-radius:50%; left:-27px; top:-100px;
+  /* El giro se realiza alrededor del centro de la base del pétalo. */
+  transform-origin:50% 100%; }
+/* 4. rotate gira una pieza; deg son grados. */
+.p1 { transform:rotate(0deg); }
+.p2 { transform:rotate(45deg); }
+.p3 { transform:rotate(90deg); }
+.p4 { transform:rotate(135deg); }
+.p5 { transform:rotate(180deg); }
+.p6 { transform:rotate(225deg); }
+.p7 { transform:rotate(270deg); }
+.p8 { transform:rotate(315deg); }
+/* 5. Un círculo: ancho y alto iguales, con bordes al 50%.
+   #a96120 es una forma de escribir el color marrón. */
+.centro { position:absolute; width:48px; height:48px; left:-24px; top:-24px;
+  background:#a96120; border-radius:50%; }
+/* calc permite hacer una cuenta: mitad de la escena menos 5 píxeles. */
+.stem { position:absolute; left:calc(50% - 5px); top:40%; width:10px;
+  height:210px; background:#46804c; border-radius:10px; }
+.leaf { position:absolute; left:50%; top:65%; width:56px; height:28px;
+  background:#46804c; border-radius:0 90% 0 90%; transform:rotate(-30deg); }
+/* 6. @keyframes guarda una receta de animación llamada florecer.
+   from = inicio; to = final. scale cambia el tamaño de todo el grupo. */
+@keyframes florecer {
+  from { transform:scale(0.05); }
+  to { transform:scale(1); }
+}
+/* 7. Usamos el mismo nombre de la receta. s significa segundos.
+   both aplica los estados de inicio y final fuera del tiempo activo. */
+.corona { animation-name:florecer; animation-duration:2s; animation-fill-mode:both; }
+/* 8. Cada corazón es un símbolo de texto dentro de un span del HTML. */
+.hearts { position:absolute; inset:0; pointer-events:none; }
+.heart { position:absolute; color:#bd4670; font-size:24px;
+  animation-name:flotar; animation-duration:4s;
+  animation-iteration-count:infinite; animation-fill-mode:both; }
+/* opacity controla cuánto se ve. 0 = invisible; 1 = totalmente visible.
+   translateY desplaza en vertical. Un valor negativo mueve hacia arriba.
+   Los porcentajes señalan momentos del tiempo total de la animación. */
+@keyframes flotar {
+  0% { opacity:0; transform:translateY(15px) scale(.5); }
+  25% { opacity:.85; }
+  100% { opacity:0; transform:translateY(-75px) scale(1.2); }
+}
+/* Posiciones y retrasos diferentes SIMULAN azar: se repiten en cada ciclo. */
+.h1 { left:29%; top:42%; animation-delay:0.43s; }
+.h2 { left:58%; top:59%; animation-delay:0.86s; }
+.h3 { left:87%; top:76%; animation-delay:1.29s; }
+.h4 { left:22%; top:28%; animation-delay:1.72s; }
+.h5 { left:51%; top:45%; animation-delay:2.15s; }
+.h6 { left:80%; top:62%; animation-delay:2.58s; }
+.h7 { left:15%; top:79%; animation-delay:0.0s; }
+.h8 { left:44%; top:31%; animation-delay:0.43s; }
+.h9 { left:73%; top:48%; animation-delay:0.86s; }
+.h10 { left:8%; top:65%; animation-delay:1.29s; }
+.h11 { left:37%; top:82%; animation-delay:1.72s; }
+.h12 { left:66%; top:34%; animation-delay:2.15s; }
+/* :has busca una condición dentro de un elemento.
+   :checked significa que la casilla está marcada. La coma agrupa selectores. */
+body:has(#pausa:checked) .corona, body:has(#pausa:checked) .heart { animation-play-state:paused; }
+/* @media aplica estas instrucciones si el dispositivo pide menos movimiento. */
+@media (prefers-reduced-motion:reduce) {
+  .corona { animation:none; transform:scale(1); }
+  .heart { animation:none; opacity:.65; }
+}
+
+/* La dedicatoria aparece suavemente al abrir el regalo. */
+.dedicatoria {max-width:680px;margin:0 auto;overflow-wrap:anywhere;animation:dedicar 1.5s both;}
+.dedicatoria h1 {font-size:clamp(28px,6vw,48px);margin:16px 0;}
+.dedicatoria p {white-space:pre-wrap;font-size:19px;line-height:1.6;}
+@keyframes dedicar {from {opacity:0;transform:translateY(12px);} to {opacity:1;transform:translateY(0);}}
+@media(prefers-reduced-motion:reduce) {.dedicatoria {animation:none;}}

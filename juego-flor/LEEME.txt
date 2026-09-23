@@ -1,0 +1,17 @@
+MISIÓN: UNA FLOR CON CSS — PERSONALIZADA
+
+1. Descomprime todo el ZIP y abre index.html en un navegador moderno.
+2. Escribe para quién es la flor y tu mensaje.
+3. Completa los ocho retos. El nombre y el mensaje aparecerán en la animación final.
+4. Pulsa «Ver mi animación completa» para ver el regalo en otra pestaña.
+5. Pulsa «Descargar HTML y CSS» para guardar mi-flor-personalizada.zip.
+6. Descomprime ese nuevo ZIP: contiene index.html y flor.css. Mantenlos juntos.
+
+Funciona sin internet. Los datos no se envían a ningún servidor. No se guarda el progreso al cerrar o recargar. Empezar de nuevo reinicia también nombre y mensaje.
+
+La animación y el ejercicio exportado usan HTML y CSS. personalizar.js es un pequeño script del juego para copiar la dedicatoria y generar la descarga. El regalo descargado no necesita JavaScript.
+Los corazones simulan azar mediante posiciones y tiempos predefinidos.
+La carpeta ejercicio contiene una versión de ejemplo. Tu versión personalizada se obtiene con el botón de descarga al terminar.
+
+PARA EL DOCENTE
+Duración sugerida: 15–20 minutos en parejas. Pide que expliquen el código en voz alta. Al terminar, cambia yellow por pink o la duración de 2s por 5s en flor.css y recarga index.html.
