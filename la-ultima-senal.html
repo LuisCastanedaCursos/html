@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>La última señal · Luis Alejandro Castañeda varon</title>
+<style>
+:root{--navy:#101827;--paper:#faf9f5;--ink:#172335;--muted:#526071;--teal:#006d77;--line:#d9dfdf;--gold:#b96817}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #e59535;outline-offset:3px}.shell{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}aside{background:var(--navy);color:#edf4f7;padding:30px 24px;position:sticky;top:0;height:100vh;overflow:auto}.brand{font-size:25px;font-weight:750;line-height:1.2}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9ed4d4}.author{font-size:13px;color:#b5c4d3;margin:14px 0 24px}.progress-track{height:6px;background:#344357;border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0;background:#65d1c7;transition:width .2s}.progress-label{font-size:13px;margin:8px 0 20px}.nav-link{display:block;text-align:left;background:transparent;border:0;color:#c7d5df;width:100%;font-size:14px;line-height:1.45;padding:10px 12px;border-radius:7px;margin:2px 0}.nav-link:hover{background:#243347}.nav-link[aria-current]{background:#d9efeb;color:#102f32;font-weight:650}.nav-link.completed::after{content:' ✓';color:#44c5b4}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.toolbar button{background:#243347;border:1px solid #45546a;color:white;border-radius:7px;font-size:13px;padding:8px 12px}main{min-width:0;padding:42px clamp(22px,6vw,90px) 72px}.page{max-width:860px;margin:auto}.page[hidden]{display:none}h1,h2,h3{line-height:1.22;letter-spacing:-.025em}h1{font-size:clamp(32px,4vw,52px);margin:12px 0 24px}h2{font-size:26px;margin:40px 0 18px}h3{font-size:21px;margin:32px 0 14px}p{margin:14px 0}a{color:var(--teal);text-underline-offset:3px}li{margin:7px 0}hr{border:0;border-top:1px solid var(--line);margin:38px 0}pre{background:#142333;color:#eaf4f6;border-radius:10px;padding:20px 22px;overflow-x:auto;font-size:15px;line-height:1.6;margin:20px 0;white-space:pre;tab-size:2}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}p code,li code,td code{background:#e8eeec;padding:2px 5px;border-radius:4px}pre code{font-size:inherit}details{border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:8px;background:white;margin:20px 0;padding:0 18px}details.solution{border-left-color:var(--gold)}summary{font-weight:650;cursor:pointer;padding:16px 0;font-size:16px}details>p:last-child{margin-bottom:20px}table{display:block;width:100%;overflow-x:auto;border-collapse:collapse;font-size:15px;line-height:1.5;margin:24px 0}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#e8efec}.checkpoint{background:#e1f0ea;border-radius:10px;padding:20px;margin-top:40px;font-size:16px}.checkpoint input{accent-color:var(--teal);width:18px;height:18px;vertical-align:middle;margin-right:8px}.page-nav{display:flex;justify-content:space-between;gap:18px;margin-top:32px}.page-nav button{background:var(--teal);color:white;border:0;border-radius:8px;padding:12px 18px;font-size:16px}.reading-status{font-size:13px;color:var(--muted);max-width:860px;margin:0 auto 20px}.mobile-menu{display:none}.code-label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#60706c;margin-bottom:-10px}.print-note{display:none}.page:first-child h1{font-size:clamp(44px,6vw,72px)}
+@media(max-width:850px){.shell{display:block}aside{height:auto;position:relative;padding:22px}.author{margin:10px 0}.mobile-menu{display:block;background:#253447;color:white;border:1px solid #516173;border-radius:7px;padding:8px 12px;font-size:14px}nav{display:none;margin-top:15px}nav.expanded{display:block}.toolbar{margin-top:14px}.progress-label{margin-bottom:14px}main{padding:26px 20px 55px}pre{padding:15px;font-size:13px}.brand{font-size:24px}h2{font-size:24px}}
+@media print{body{background:white;font-size:11pt;line-height:1.5}.shell{display:block}aside,.toolbar,.page-nav,.checkpoint,.reading-status,.code-label{display:none!important}main{padding:0}.page,.page[hidden]{display:block!important;max-width:none;break-before:page}.page:first-child{break-before:auto}h1{font-size:28pt}h2{font-size:19pt}h3{font-size:14pt}pre{white-space:pre-wrap;overflow:visible;color:#111;background:#f0f0f0;font-size:9pt;break-inside:avoid}details{break-inside:auto;padding:8px}summary{font-size:11pt}table{display:table;font-size:9pt}a{color:#111}.print-note{display:block}}
+</style></head><body><div class="shell"><aside><div class="eyebrow">Aventura de JavaScript · 12 misiones</div><div class="brand">La última señal</div><div class="author">Autor: Luis Alejandro Castañeda varon</div><div class="progress-track" role="progressbar" aria-label="Misiones completadas" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><div class="progress-fill"></div></div><p class="progress-label" aria-live="polite">0 de 12 misiones completadas</p><button class="mobile-menu" aria-expanded="false" aria-controls="indice">Mostrar índice</button><nav id="indice" aria-label="Índice del libro"><button class="nav-link" data-go="0" aria-current="page">Comienza aquí</button>
+<button class="nav-link" data-go="1" >1 — ¿Hay alguien ahí?</button>
+<button class="nav-link" data-go="2" >2 — Lo que la nave recuerda</button>
+<button class="nav-link" data-go="3" >3 — Cada paso tiene un coste</button>
+<button class="nav-link" data-go="4" >4 — La puerta que dice no</button>
+<button class="nav-link" data-go="5" >5 — Un mensaje escrito a medias</button>
+<button class="nav-link" data-go="6" >6 — LUMA aprende una orden</button>
+<button class="nav-link" data-go="7" >7 — La mochila de repuestos</button>
+<button class="nav-link" data-go="8" >8 — Tres sectores, tres historias</button>
+<button class="nav-link" data-go="9" >9 — El recorrido de mantenimiento</button>
+<button class="nav-link" data-go="10" >10 — Ecos de la tormenta</button>
+<button class="nav-link" data-go="11" >11 — El guardián de comunicaciones</button>
+<button class="nav-link" data-go="12" >12 — La estación vuelve a iluminarse</button>
+<button class="nav-link" data-go="13" >Epílogo y arsenal</button>
+<button class="nav-link" data-go="14" >Recuperar el laboratorio</button></nav><div class="toolbar"><button id="print-book">Imprimir / PDF</button><button id="reset-reading">Borrar marcas</button></div></aside><main><p class="reading-status" id="reading-status">Comienza aquí</p><section class="page" id="pagina-0" data-page="0" ><h1>La última señal</h1>
+<h2>Programa tu regreso a casa</h2>
+<p><strong>Autor: Luis Alejandro Castañeda varon</strong></p>
+<p>Un mini libro interactivo para aprender JavaScript desde cero.</p>
+<p><strong>12 capítulos · Una sola aventura · Tu laboratorio: la consola de Chrome</strong></p>
+<h2>Antes de despegar</h2>
+<p>No necesitas experiencia, instalaciones ni un editor. Necesitas Chrome en un computador, una pestaña vacía y ganas de comprobar qué pasa cuando cambias una instrucción.</p>
+<p>Has aterrizado de emergencia en Nébula. La estación está a oscuras. Tu compañero, el robot LUMA, puede leer órdenes, pero sus controles han desaparecido. Tres balizas deben volver a funcionar para pedir rescate. Cada herramienta de JavaScript que descubras permitirá reconstruir una parte de ese sistema.</p>
+<p>Trabaja con este libro abierto y <strong>otra pestaña para el laboratorio</strong>. En la barra de direcciones de esa segunda pestaña escribe <code>about:blank</code> y pulsa Enter. No practiques en bancos, redes sociales, tiendas ni cuentas personales. Tampoco ejecutes las misiones en la consola de este libro: necesitarás conservar su navegación.</p>
+<h3>Cómo recorrer esta aventura</h3>
+<ol>
+<li>Lee el problema y haz una predicción antes de ejecutar.</li>
+<li>Escribe el fragmento en tu laboratorio. Observa el resultado.</li>
+<li>Cambia algo. Comprueba si tu predicción se mantiene.</li>
+<li>Intenta el desafío. Abre primero la pista y después, si la necesitas, la solución.</li>
+<li>Completa el punto de control antes de avanzar.</li>
+</ol>
+<p>Las soluciones son <strong>posibles</strong>, no únicas. Si tu versión cumple las reglas y puedes explicar por qué, también cuenta.</p>
+<p>Cada capítulo está pensado para 15–30 minutos. Si terminas pronto, prueba los tres niveles y la misión extra. Haz pausas: el objetivo es poder explicar tus decisiones, no llegar al final deprisa.</p>
+<h3>Tres etiquetas para no perder el rumbo</h3>
+<ul>
+<li><strong>Ruta:</strong> fragmento que se incorpora al proyecto; ejecútalo en orden.</li>
+<li><strong>Prueba:</strong> experimento temporal o repetible. Lee si modifica el estado.</li>
+<li><strong>Reemplaza:</strong> nueva versión de una función anterior; escribe la definición completa y ejecútala.</li>
+</ul>
+<p>Los errores deliberados están marcados como <strong>BUG</strong>. No forman parte de la versión correcta. Los desafíos no añaden requisitos secretos a capítulos posteriores: el punto de control indica el estado necesario.</p>
+<h3>Tu partida vive en esta pestaña</h3>
+<p>Al recargar o cerrar la pestaña del laboratorio se pierde el programa y su estado. Borrar los mensajes de la consola <strong>no borra las variables</strong>. Repetir una declaración con <code>let</code> o <code>const</code> puede producir un error de nombre ya declarado. Si el nombre ya existe, cambia su valor con una asignación, sin repetir <code>let</code>.</p>
+<p>El apéndice «Recuperar el laboratorio» permite reconstruir lo necesario si interrumpes la aventura. No lo necesitas para empezar. El progreso de lectura que marcas en este libro es independiente del estado del juego.</p>
+<hr>
+<div class="page-nav"><button data-go="1">Siguiente →</button></div></section>
+<section class="page" id="pagina-1" data-page="1" hidden><h1>Capítulo 1 — ¿Hay alguien ahí?</h1>
+<p><strong>Tiempo orientativo: 15 minutos · Objetivo: establecer contacto.</strong></p>
+<h2>La historia</h2>
+<p>La luz de emergencia parpadea. Un robot despierta junto a ti.</p>
+<p>—Soy LUMA. Si puedes escribir una orden, todavía podemos salir de aquí.</p>
+<p>La pantalla muestra un espacio vacío. Esa será nuestra consola: <strong>nuestro laboratorio de JavaScript</strong>.</p>
+<h2>Tu misión: una respuesta en los primeros cinco minutos</h2>
+<p>En la pestaña <code>about:blank</code>, abre la consola:</p>
+<ul>
+<li><strong>Windows/Linux:</strong> <code>Ctrl + Shift + J</code>.</li>
+<li><strong>Mac:</strong> <code>Cmd + Option + J</code>.</li>
+<li>Alternativa: clic derecho en la página → <strong>Inspeccionar</strong> → pestaña <strong>Console/Consola</strong>.</li>
+</ul>
+<p>Haz clic junto al símbolo <code>&gt;</code> o en el campo de entrada. Escribe la primera orden a mano:</p>
+<h3>Antes de pulsar Enter…</h3>
+<p>¿Crees que la consola mostrará la orden completa o solo el mensaje entre comillas?</p>
+<h3>Experimenta · Ruta</h3>
+<pre><code class="language-js">console.log(&quot;LUMA, ¿me recibes?&quot;);
+</code></pre>
+<p>Pulsa Enter. Deberías ver <strong>LUMA, ¿me recibes?</strong>. Ya has dado una instrucción al computador.</p>
+<p>Puede aparecer <code>undefined</code> debajo. Es el resultado que devuelve esta llamada, no un error. Lo investigaremos cuando el juego necesite distinguir diferentes ausencias.</p>
+<h2>Lo que acabas de descubrir</h2>
+<p><code>console.log()</code> muestra información. El mensaje va entre paréntesis. Las comillas indican que ese contenido es texto: un <strong>string</strong>.</p>
+<p>Las comillas rectas <code>&quot;</code> o <code>&#39;</code> sirven; las comillas decorativas <code>“ ”</code> no. El punto y coma cierra la instrucción en los ejemplos de este libro.</p>
+<h2>Ahora tú · Nivel 1: modifica</h2>
+<p>Cambia el mensaje para que LUMA responda. Esta llamada se puede repetir sin cambiar la partida:</p>
+<pre><code class="language-js">console.log(&quot;LUMA: señal recibida. Busquemos las balizas.&quot;);
+</code></pre>
+<p>Tu primera victoria ya está completa: dos personajes se comunican mediante instrucciones que tú escribiste.</p>
+<h2>Nivel 2: construye</h2>
+<p>Escribe dos llamadas nuevas: una debe describir dónde estás; otra debe decir qué necesitas. Usa el mismo mecanismo, con tus propios textos.</p>
+<h2>BUG detectado: el mensaje roto</h2>
+<p><strong>Prueba deliberadamente incorrecta.</strong> Antes de ejecutarla, busca lo que falta:</p>
+<pre><code class="language-js">console.log(&quot;LUMA, enciende la luz);
+</code></pre>
+<p>La consola mostrará un <code>SyntaxError</code>. El texto exacto puede variar. La pista está en cómo está escrita la instrucción: falta cerrar las comillas.</p>
+<p>Corrige y ejecuta:</p>
+<pre><code class="language-js">console.log(&quot;LUMA, enciende la luz&quot;);
+</code></pre>
+<p>Un error es información sobre una instrucción que el sistema no pudo completar. Aquí no has estropeado nada.</p>
+<h2>Nivel 3: desafío — Tu primer registro</h2>
+<p>Sin copiar el ejemplo, haz que aparezcan tres mensajes: tu identificación, el problema de la estación y tu objetivo. Intenta resolverlo antes de abrir las ayudas.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>Cada mensaje puede salir con una llamada independiente. Comprueba las parejas de comillas y paréntesis.</p>
+</details>
+
+<details class="solution"><summary>Solución posible — abrir después de intentarlo</summary>
+
+<pre><code class="language-js">console.log(&quot;Soy la persona a cargo del rescate.&quot;);
+console.log(&quot;Las comunicaciones están apagadas.&quot;);
+console.log(&quot;Voy a reparar tres balizas.&quot;);
+</code></pre>
+<p>Son tres instrucciones del mismo tipo. Tus textos pueden ser distintos.</p>
+</details>
+
+<h2>Chrome también puede hablar</h2>
+<p>Puedes encontrar advertencias o mensajes ajenos a lo que acabas de escribir. Si Chrome bloquea el pegado y muestra una advertencia, léela y escribe estos fragmentos breves a mano; no necesitas desactivar esa protección. Solo ejecuta código del curso que entiendas. No pegues código desconocido de Internet.</p>
+<p>Si no ves la salida, comprueba que estás en <strong>Console</strong>, que ejecutaste con Enter y que los filtros permiten mostrar mensajes. No escribas el símbolo <code>&gt;</code>: ya lo pone la consola.</p>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> comunicación con LUMA. <strong>Logro:</strong> primer contacto.</p>
+<p><strong>Tu arsenal:</strong> <code>console.log()</code>, strings, lectura inicial de un <code>SyntaxError</code>.</p>
+<p><strong>Punto de control:</strong> todavía no hay variables ni recursos que restaurar.</p>
+<p><strong>Continuará…</strong> LUMA conoce la ruta, pero ha olvidado quién eres y cuánta energía queda.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="1"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="0">← Anterior</button><button data-go="2">Siguiente →</button></div></section>
+<section class="page" id="pagina-2" data-page="2" hidden><h1>Capítulo 2 — Lo que la nave recuerda</h1>
+<p><strong>Tiempo orientativo: 15–20 minutos · Objetivo: crear la memoria del juego.</strong></p>
+<h2>La historia</h2>
+<p>—Puedo mostrar mensajes —dice LUMA—, pero necesito recordar los datos de esta misión.</p>
+<p>Si escribes «100 de energía» en un mensaje, solo muestras palabras. Necesitamos un valor que otras instrucciones puedan consultar y cambiar.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>Si guardamos tu nombre, ¿podremos mostrarlo después sin volver a escribir el texto completo?</p>
+<h2>Experimenta · Ruta: declara una sola vez</h2>
+<pre><code class="language-js">let nombre = &quot;Alex&quot;;
+let energia = 100;
+const estacion = &quot;Nébula&quot;;
+let senalEnviada = false;
+</code></pre>
+<p>Puedes elegir otro nombre. El resto debe empezar como aparece aquí.</p>
+<p>Ahora consulta la memoria:</p>
+<pre><code class="language-js">console.log(nombre);
+console.log(energia);
+console.log(estacion);
+console.log(senalEnviada);
+</code></pre>
+<h2>¿Qué ocurrió?</h2>
+<p><code>nombre</code> está asociado a un texto. <code>energia</code> tiene un número. <code>senalEnviada</code> tiene <code>false</code>: la señal todavía no se ha enviado.</p>
+<p>Una <strong>variable</strong> es un nombre asociado a un valor. Al principio puedes imaginar una caja etiquetada. Lo importante es que JavaScript usa ese nombre para acceder a un valor; no es una caja física y más adelante verás valores que representan colecciones.</p>
+<p><code>let</code> permite asignar un valor nuevo. <code>const</code> impide reasignar ese nombre: la estación seguirá siendo Nébula. Un <strong>booleano</strong> solo tiene dos valores: <code>true</code> y <code>false</code>. Escribimos ambos sin comillas.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Predice cuál será el nombre después de estas dos instrucciones. Ejecútalas y luego vuelve a elegir el tuyo:</p>
+<pre><code class="language-js">nombre = &quot;Iris&quot;;
+console.log(nombre);
+</code></pre>
+<p>No repetimos <code>let</code>: la variable ya existe.</p>
+<pre><code class="language-js">nombre = &quot;Alex&quot;;
+</code></pre>
+<p>Puedes reemplazar Alex por tu nombre. Esta elección no cambia las reglas.</p>
+<h2>Nivel 2: construye</h2>
+<p>LUMA necesita recordar su nombre. Declara <code>const robot = &quot;LUMA&quot;;</code> y muéstralo. Será una etiqueta fija de nuestro compañero.</p>
+<h3>Ruta: asegura este dato antes de avanzar</h3>
+<p>Si ya resolviste el nivel 2, <strong>no vuelvas a ejecutar esta declaración</strong>:</p>
+<pre><code class="language-js">const robot = &quot;LUMA&quot;;
+</code></pre>
+<h2>BUG detectado: una letra perdida</h2>
+<p>¿Qué ocurrirá al escribir esto?</p>
+<pre><code class="language-js">console.log(energa);
+</code></pre>
+<p>Un <code>ReferenceError</code> señala que el nombre usado no existe en este contexto. Compara <code>energa</code> con <code>energia</code>. JavaScript también distingue mayúsculas: <code>Energia</code> y <code>energia</code> son nombres diferentes.</p>
+<h2>Nivel 3: desafío — La prueba de memoria</h2>
+<p>Cambia temporalmente la energía a 80, consulta su valor y devuélvela a 100. Haz que el informe final muestre también si la señal está enviada.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>Los datos ya están declarados. Para cambiarlos, utiliza su nombre, <code>=</code> y el valor nuevo. Para consultarlos, usa la herramienta del capítulo 1.</p>
+</details>
+
+<details class="solution"><summary>Solución posible</summary>
+
+<pre><code class="language-js">energia = 80;
+console.log(energia);
+energia = 100;
+console.log(energia);
+console.log(senalEnviada);
+</code></pre>
+<p>Primero actualizas, después consultas. Restauras 100 para que el siguiente capítulo empiece con una partida conocida.</p>
+</details>
+
+<h2>Un dato que no puede reasignarse</h2>
+<p><strong>Prueba incorrecta opcional:</strong> <code>estacion = &quot;Otro planeta&quot;;</code> produce un <code>TypeError</code> porque intentas reasignar una constante. La asignación falla y <code>estacion</code> conserva su valor.</p>
+<p>No hace falta memorizar los nombres de todos los errores. Empieza por preguntar: ¿la instrucción está mal escrita, el nombre no existe o estoy intentando una operación no permitida?</p>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> memoria de la partida. <strong>Logro:</strong> identidad recuperada.</p>
+<p><strong>Tu arsenal:</strong> valores, números, booleanos, variables, <code>let</code>, <code>const</code> y asignación.</p>
+<p><strong>Punto de control · Ruta:</strong></p>
+<pre><code class="language-js">energia = 100;
+senalEnviada = false;
+console.log(energia, senalEnviada);
+</code></pre>
+<p>Debes ver <code>100 false</code>. <code>nombre</code> conserva tu elección; <code>estacion</code> y <code>robot</code> ya existen.</p>
+<p><strong>Continuará…</strong> La compuerta se abre, pero el medidor de energía empieza a bajar.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="2"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="1">← Anterior</button><button data-go="3">Siguiente →</button></div></section>
+<section class="page" id="pagina-3" data-page="3" hidden><h1>Capítulo 3 — Cada paso tiene un coste</h1>
+<p><strong>Tiempo orientativo: 15–20 minutos · Objetivo: hacer que las acciones cambien un recurso.</strong></p>
+<h2>La historia</h2>
+<p>Explorar un sector cuesta 10 puntos de energía. Reparar su baliza costará otros 15. LUMA necesita calcular esos cambios, no fingirlos en un mensaje.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>Partimos de 100. ¿Qué valor tendrá <code>energia</code> después de descontar 10? ¿Y si ejecutas la misma orden dos veces?</p>
+<h2>Experimenta · Ruta</h2>
+<pre><code class="language-js">energia = energia - 10;
+console.log(energia);
+</code></pre>
+<p>Deberías ver <code>90</code>. Primero se calcula lo que está a la derecha del <code>=</code>; después se asigna el resultado a <code>energia</code>. Repetirlo volvería a descontar 10.</p>
+<h2>Haz que el informe hable · Ruta</h2>
+<pre><code class="language-js">console.log(`${nombre}, quedan ${energia} puntos en ${estacion}.`);
+</code></pre>
+<p>Los símbolos que rodean el texto son <strong>acentos graves</strong> o backticks: <code>`</code>. No son comillas simples. Este texto es un <strong>template literal</strong>. Cada <code>${...}</code> inserta el valor de una expresión.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Prueba un descuento de 5. Observa el informe. Como aún no hemos explorado de verdad, restaura después el recurso:</p>
+<pre><code class="language-js">energia = energia - 5;
+console.log(`Energía de prueba: ${energia}`);
+energia = 100;
+</code></pre>
+<h2>Nivel 2: construye</h2>
+<p>Muestra el coste total de explorar y reparar un sector. Después calcula el de tres sectores. No cambies <code>energia</code> en este cálculo.</p>
+<h3>Experimenta · Prueba sin efectos</h3>
+<pre><code class="language-js">console.log(10 + 15);
+console.log((10 + 15) * 3);
+console.log(100 - (10 + 15) * 3);
+</code></pre>
+<p>Los resultados son <code>25</code>, <code>75</code> y <code>25</code>. Los paréntesis agrupan el coste de un sector. <code>+</code> suma, <code>-</code> resta, <code>*</code> multiplica y <code>/</code> divide números.</p>
+<h2>BUG detectado: una suma que pega textos</h2>
+<p>Predice ambos resultados:</p>
+<pre><code class="language-js">console.log(&quot;10&quot; + 5);
+console.log(10 + 5);
+</code></pre>
+<p>Verás <code>105</code> como texto y <code>15</code> como número. Con un texto en esta expresión, <code>+</code> une contenidos. Por eso la energía se guarda como <code>100</code>, sin comillas. Usaremos números para los costes y template literals para los informes.</p>
+<h2>Nivel 3: desafío — El presupuesto del rescate</h2>
+<p>Muestra una frase que diga cuánto queda después de explorar y reparar las tres balizas, partiendo de tu energía actual de 100. Haz el cálculo dentro del mensaje, sin gastar realmente energía.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>Dentro de <code>${...}</code> también puede ir un cálculo. El coste total es el coste de un sector multiplicado por tres.</p>
+</details>
+
+<details class="solution"><summary>Solución posible</summary>
+
+<pre><code class="language-js">console.log(`Después del rescate quedarían ${energia - (10 + 15) * 3} puntos.`);
+</code></pre>
+<p>La expresión produce 25. Como no asignas un valor a <code>energia</code>, la partida sigue teniendo 100.</p>
+</details>
+
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> cálculo de costes e informe con datos actuales. <strong>Logro:</strong> presupuesto de rescate.</p>
+<p><strong>Tu arsenal:</strong> operadores aritméticos, expresiones, asignación y template literals.</p>
+<p><strong>Punto de control · Ruta:</strong></p>
+<pre><code class="language-js">energia = 100;
+console.log(`Reserva: ${energia}`);
+</code></pre>
+<p><strong>Continuará…</strong> ¿Qué debe hacer la compuerta cuando alguien intenta gastar más energía de la que tiene?</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="3"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="2">← Anterior</button><button data-go="4">Siguiente →</button></div></section>
+<section class="page" id="pagina-4" data-page="4" hidden><h1>Capítulo 4 — La puerta que dice no</h1>
+<p><strong>Tiempo orientativo: 20–25 minutos · Objetivo: impedir acciones inválidas.</strong></p>
+<h2>La historia</h2>
+<p>Una compuerta necesita 10 puntos para abrirse. El sistema antiguo descontaba energía incluso cuando no había suficiente. Vas a reparar esa regla.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>¿Qué significa «tener suficiente»? ¿Debería permitir la acción con exactamente 10 puntos?</p>
+<h2>Experimenta · Ruta</h2>
+<pre><code class="language-js">console.log(energia &gt;= 10);
+console.log(energia === 0);
+</code></pre>
+<p>Con energía 100 obtendrás <code>true</code> y <code>false</code>. Una comparación produce un booleano. <code>&gt;=</code> significa «mayor o igual». <code>===</code> compara sin convertir automáticamente los tipos. <code>=</code> asigna: no son intercambiables.</p>
+<h3>Ruta: la decisión</h3>
+<pre><code class="language-js">if (energia &gt;= 10) {
+  console.log(&quot;La compuerta permite avanzar.&quot;);
+} else {
+  console.log(&quot;No hay energía suficiente.&quot;);
+}
+</code></pre>
+<p>Lee el bloque como una frase: <strong>si</strong> hay suficiente energía, muestra el primer mensaje; <strong>si no</strong>, muestra el segundo. Las llaves agrupan instrucciones.</p>
+<p>Para escribir varias líneas a mano, usa <strong>Shift + Enter</strong> entre líneas. Ejecuta con Enter cuando el bloque esté completo y todas las llaves estén cerradas. No ejecutes cada línea de un bloque incompleto por separado.</p>
+<h2>Un diagnóstico con tres respuestas</h2>
+<p><strong>Prueba:</strong> escribe el bloque completo antes de ejecutarlo.</p>
+<pre><code class="language-js">if (energia === 0) {
+  console.log(&quot;Sin energía.&quot;);
+} else if (energia &lt; 25) {
+  console.log(&quot;Reserva baja.&quot;);
+} else {
+  console.log(&quot;Reserva suficiente.&quot;);
+}
+</code></pre>
+<p><code>else if</code> ofrece otra condición cuando la anterior no se cumplió. Solo se ejecuta una de estas ramas.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Asigna temporalmente 0, 20 y 100 a <code>energia</code>; repite el diagnóstico para cada valor. Predice el mensaje antes de ejecutarlo. Termina con 100.</p>
+<h2>Nivel 2: construye</h2>
+<p>Una puerta exige energía suficiente <strong>y</strong> que la misión siga activa. Para nuestra partida, activa significa que la señal todavía no se ha enviado:</p>
+<pre><code class="language-js">console.log(energia &gt;= 10 &amp;&amp; !senalEnviada);
+</code></pre>
+<p><code>&amp;&amp;</code> exige ambas condiciones. <code>!</code> invierte el booleano: <code>!false</code> es <code>true</code>. <code>||</code> permite que se cumpla una condición <strong>o</strong> la otra. Por ejemplo, <code>energia === 0 || senalEnviada</code> detecta dos motivos diferentes para detener una acción.</p>
+<h2>BUG detectado: la frontera equivocada</h2>
+<p>Alguien propone <code>energia &gt; 10</code> para abrir la compuerta. Prueba con energía 10. ¿La puerta debería abrirse? La comparación estricta la bloquearía. El código puede ejecutarse sin errores y aun así expresar una regla incorrecta: es un <strong>error de lógica</strong>.</p>
+<h2>Nivel 3: desafío — Gasta solo si puedes</h2>
+<p>Escribe una decisión que descuente 10 únicamente cuando hay energía suficiente y la señal no se ha enviado. Si no se permite, muestra una explicación y conserva la energía.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>La resta debe estar dentro de la rama permitida. Comprueba dos condiciones antes de cambiar el recurso.</p>
+</details>
+
+<details class="solution"><summary>Solución posible</summary>
+
+<pre><code class="language-js">if (energia &gt;= 10 &amp;&amp; !senalEnviada) {
+  energia = energia - 10;
+  console.log(`Acción permitida. Quedan ${energia}.`);
+} else {
+  console.log(&quot;Acción bloqueada: revisa energía y señal.&quot;);
+}
+</code></pre>
+<p>Solo la primera rama modifica la energía. Con 100 y señal sin enviar, queda 90. Con 5, sigue habiendo 5.</p>
+</details>
+
+<h2>Misión de memoria</h2>
+<p>Sin añadir una herramienta nueva, muestra un informe con tu nombre y el valor de energía después de probar la puerta. ¿Cómo puedes consultar el resultado sin cambiarlo?</p>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> bloqueo de acciones sin recursos. <strong>Logro:</strong> compuerta segura.</p>
+<p><strong>Tu arsenal:</strong> comparaciones, decisiones, operadores lógicos y errores de lógica.</p>
+<p><strong>Punto de control · Ruta:</strong></p>
+<pre><code class="language-js">energia = 100;
+senalEnviada = false;
+</code></pre>
+<p><strong>Continuará…</strong> Detrás de la puerta hay un registro de Iris. La palabra de acceso tiene espacios y mayúsculas inesperadas.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="4"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="3">← Anterior</button><button data-go="5">Siguiente →</button></div></section>
+<section class="page" id="pagina-5" data-page="5" hidden><h1>Capítulo 5 — Un mensaje escrito a medias</h1>
+<p><strong>Tiempo orientativo: 15–20 minutos · Objetivo: interpretar una respuesta escrita.</strong></p>
+<h2>La historia</h2>
+<p>Un terminal acepta la palabra <code>rescate</code>. Sin embargo, alguien la escribió como <code>RESCATE</code>. LUMA la rechaza. Las personas pueden escribir la misma intención de formas diferentes: debemos preparar el texto antes de compararlo.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>¿Los espacios y las mayúsculas harán que los dos textos sean distintos?</p>
+<h2>Experimenta · Ruta</h2>
+<pre><code class="language-js">let respuesta = &quot; RESCATE &quot;;
+console.log(respuesta === &quot;rescate&quot;);
+</code></pre>
+<p>Obtendrás <code>false</code>. Vamos a limpiar el dato:</p>
+<pre><code class="language-js">respuesta = respuesta.trim();
+respuesta = respuesta.toLowerCase();
+console.log(respuesta === &quot;rescate&quot;);
+</code></pre>
+<p>Ahora verás <code>true</code>.</p>
+<h2>Lo que acabas de descubrir</h2>
+<p>Un <strong>método</strong> es una función que usamos a través de un valor u objeto, con un punto y su nombre. <code>trim()</code> devuelve el texto sin espacios en los extremos. <code>toLowerCase()</code> devuelve una versión en minúsculas.</p>
+<p>Estos métodos no cambian el string original. Aquí actualizamos <code>respuesta</code> porque asignamos el texto que devuelven. <code>trim()</code> no elimina espacios en medio de una frase.</p>
+<h2>La pista de Iris · Ruta</h2>
+<pre><code class="language-js">const primerRegistro = &quot;Iris: apagamos la señal para proteger la estación.&quot;;
+console.log(primerRegistro.includes(&quot;proteger&quot;));
+</code></pre>
+<p><code>includes()</code> comprueba si un texto contiene otro; devuelve <code>true</code> o <code>false</code>. También distingue mayúsculas. Que una frase contenga una palabra no significa que sea exactamente esa palabra.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Asigna <code>&quot;  ResCate  &quot;</code> a <code>respuesta</code>, repite la limpieza y comprueba el resultado. Después prueba <code>&quot;res cate&quot;</code>. ¿Por qué este segundo texto no coincide?</p>
+<h2>Nivel 2: construye</h2>
+<p>Escribe una decisión que muestre «Registro desbloqueado» cuando la respuesta limpia sea exactamente <code>rescate</code>, y un mensaje de reintento en otro caso.</p>
+<h2>Nivel 3: desafío — Una contraseña demasiado permisiva</h2>
+<p>Una versión usa <code>respuesta.includes(&quot;rescate&quot;)</code> para abrir el registro. Eso acepta <code>&quot;no quiero rescate&quot;</code>. Corrígela para aceptar únicamente la palabra de acceso, ignorando espacios exteriores y mayúsculas.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>Primero prepara el texto; después decide si necesitas buscar una parte o comparar el contenido completo.</p>
+</details>
+
+<details class="solution"><summary>Solución posible</summary>
+
+<pre><code class="language-js">respuesta = respuesta.trim().toLowerCase();
+if (respuesta === &quot;rescate&quot;) {
+  console.log(&quot;Registro desbloqueado.&quot;);
+} else {
+  console.log(&quot;Prueba otra vez.&quot;);
+}
+</code></pre>
+<p>Se pueden encadenar métodos: <code>trim()</code> entrega el texto al siguiente método. La comparación completa impide aceptar una frase que solo contiene la palabra.</p>
+</details>
+
+<h2>BUG detectado: un método que nunca se ejecutó</h2>
+<p>Compara <code>respuesta.trim</code> con <code>respuesta.trim()</code>. Sin paréntesis haces referencia al método; con paréntesis lo llamas. En este juego necesitamos el texto que resulta de ejecutarlo.</p>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> respuesta escrita tolerante a espacios exteriores y mayúsculas. <strong>Logro:</strong> primer registro recuperado.</p>
+<p><strong>Tu arsenal:</strong> métodos, limpieza de strings, búsqueda y comparación exacta.</p>
+<p><strong>Punto de control:</strong> energía 100 y señal <code>false</code>. Estos experimentos no gastan recursos.</p>
+<p><strong>Continuará…</strong> Iris apagó la señal para proteger algo. LUMA necesita órdenes reutilizables para investigar.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="5"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="4">← Anterior</button><button data-go="6">Siguiente →</button></div></section>
+<section class="page" id="pagina-6" data-page="6" hidden><h1>Capítulo 6 — LUMA aprende una orden</h1>
+<p><strong>Tiempo orientativo: 20–25 minutos · Objetivo: reunir instrucciones que puedas reutilizar.</strong></p>
+<h2>La historia</h2>
+<p>Cada revisión exige volver a escribir el informe y cada puerta repite la misma comprobación. LUMA propone guardar esas tareas con un nombre.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>Si enseñamos una orden, ¿se ejecutará al definirla o cuando la llamemos?</p>
+<h2>Experimenta · Ruta</h2>
+<pre><code class="language-js">function verEstado() {
+  console.log(`${nombre} en ${estacion}`);
+  console.log(`Energía: ${energia}`);
+  console.log(`Señal enviada: ${senalEnviada}`);
+}
+</code></pre>
+<p>Esta definición prepara la tarea; todavía no muestra el informe. Ahora llama a la función:</p>
+<pre><code class="language-js">verEstado();
+</code></pre>
+<h2>Lo que acabas de descubrir</h2>
+<p>Una <strong>función</strong> reúne instrucciones para ejecutarlas cuando la llamas. Los paréntesis de la llamada activan la tarea. Si después cambia <code>energia</code>, la próxima llamada consultará su valor actual.</p>
+<h2>Una orden que recibe información · Ruta</h2>
+<pre><code class="language-js">function puedePagar(coste) {
+  return coste &gt;= 0 &amp;&amp; energia &gt;= coste;
+}
+</code></pre>
+<p><code>coste</code> es un <strong>parámetro</strong>: un nombre para el dato que recibe la función. <code>return</code> entrega un resultado y termina esa llamada.</p>
+<p>Predice el resultado antes de ejecutar:</p>
+<pre><code class="language-js">console.log(puedePagar(10));
+console.log(puedePagar(150));
+console.log(puedePagar(-5));
+</code></pre>
+<p>Con energía 100: <code>true</code>, <code>false</code>, <code>false</code>. Esta función comprueba; no gasta. Un coste negativo tampoco es válido.</p>
+<h2>Mostrar y devolver son tareas distintas</h2>
+<p><code>verEstado()</code> muestra información y no tiene un <code>return</code> explícito: devuelve <code>undefined</code>. <code>puedePagar(10)</code> devuelve un booleano que otra instrucción puede usar. Dentro de una función, <code>console.log(true)</code> por sí solo no equivale a <code>return true</code>.</p>
+<p>LUMA también necesita emitir mensajes que podamos reutilizar después en el panel visual:</p>
+<pre><code class="language-js">function avisar(mensaje) {
+  console.log(mensaje);
+  return mensaje;
+}
+</code></pre>
+<p>Esta función hace las dos cosas: muestra el mensaje y lo devuelve. En la consola puede aparecer el texto como salida y también como resultado de la llamada; no significa que la acción se haya ejecutado dos veces.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Cambia temporalmente <code>energia</code> a 5. Predice <code>puedePagar(10)</code>, ejecuta y restaura 100.</p>
+<h2>Nivel 2: construye</h2>
+<p>Construye <code>costeSector()</code> para devolver el coste de explorar y reparar un sector: 10 más 15. No modifiques la energía. La función es una herramienta de cálculo opcional.</p>
+<h2>BUG detectado: un nombre que vive dentro</h2>
+<p>Prueba por separado:</p>
+<pre><code class="language-js">function probarSensor() {
+  const lectura = &quot;estable&quot;;
+  return lectura;
+}
+console.log(probarSensor());
+</code></pre>
+<p>Después ejecuta esta instrucción incorrecta:</p>
+<pre><code class="language-js">console.log(lectura);
+</code></pre>
+<p>Produce un <code>ReferenceError</code>. <code>lectura</code> existe dentro de la función. Ese alcance se llama <strong>scope</strong>. Las variables declaradas con <code>let</code> y <code>const</code> dentro de un bloque también se limitan a ese bloque. El parámetro <code>coste</code> no existe fuera de su función.</p>
+<h2>Nivel 3: desafío — Una respuesta reutilizable</h2>
+<p>Crea <code>mensajeReserva(coste)</code> para <strong>devolver</strong> «Puedes continuar» si alcanza la energía, o «Necesitas más energía» en otro caso. Aprovecha algo que ya programaste.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>Puedes llamar a una función dentro de otra. Para obtener un texto que otra instrucción utilice, necesitas devolverlo.</p>
+</details>
+
+<details class="solution"><summary>Solución posible</summary>
+
+<pre><code class="language-js">function mensajeReserva(coste) {
+  if (puedePagar(coste)) {
+    return &quot;Puedes continuar&quot;;
+  }
+  return &quot;Necesitas más energía&quot;;
+}
+</code></pre>
+<p>El primer <code>return</code> termina la llamada si la condición se cumple. Por eso no hace falta <code>else</code> para el segundo caso. Prueba <code>console.log(mensajeReserva(10));</code> y cambia el coste.</p>
+</details>
+
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> consultas y comprobaciones reutilizables. <strong>Logro:</strong> órdenes de LUMA.</p>
+<p><strong>Tu arsenal:</strong> funciones, llamadas, parámetros, <code>return</code>, scope y salida anticipada.</p>
+<p><strong>Punto de control · Ruta:</strong></p>
+<pre><code class="language-js">energia = 100;
+verEstado();
+</code></pre>
+<p>Deben existir <code>verEstado</code>, <code>puedePagar</code> y <code>avisar</code>. Las funciones de desafíos son opcionales.</p>
+<p><strong>Continuará…</strong> Encuentras varias piezas. Un único nombre no basta para recordar toda la mochila.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="6"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="5">← Anterior</button><button data-go="7">Siguiente →</button></div></section>
+<section class="page" id="pagina-7" data-page="7" hidden><h1>Capítulo 7 — La mochila de repuestos</h1>
+<p><strong>Tiempo orientativo: 20–25 minutos · Objetivo: recoger y consumir componentes.</strong></p>
+<h2>La historia</h2>
+<p>Las balizas necesitan un cable, un fusible y una batería. Antes de visitar los sectores, vamos a probar la mochila con piezas de entrenamiento.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>¿Cómo guardarías varios componentes juntos? ¿Qué debería pasar cuando utilizas uno?</p>
+<h2>Experimenta · Ruta</h2>
+<pre><code class="language-js">const inventario = [];
+inventario.push(&quot;cable&quot;);
+inventario.push(&quot;fusible&quot;);
+console.log(inventario);
+</code></pre>
+<p>Un <strong>array</strong> es una colección ordenada. <code>[]</code> crea uno vacío. <code>push()</code> añade al final y modifica el array. La consola puede mostrarlo como una lista desplegable.</p>
+<h3>Ruta: examina la mochila</h3>
+<pre><code class="language-js">console.log(inventario[0]);
+console.log(inventario.length);
+console.log(inventario.includes(&quot;bateria&quot;));
+</code></pre>
+<p>Verás <code>cable</code>, <code>2</code> y <code>false</code>. Los índices empiezan en <strong>0</strong>: la primera pieza está en la posición 0 y la segunda en la 1. <code>length</code> es una propiedad que indica la cantidad; no lleva paréntesis.</p>
+<h2>¿Por qué usamos const si la mochila cambia?</h2>
+<p><code>const</code> impide reasignar <code>inventario</code> a otro valor. No congela el array. Podemos añadir y retirar piezas dentro de esa misma colección. <code>inventario = []</code> sería una reasignación prohibida; <code>inventario.push(&quot;bateria&quot;)</code> modifica su contenido y está permitido.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Añade una batería, observa la longitud y busca un componente que no exista.</p>
+<h2>Encontrar y retirar · Prueba</h2>
+<pre><code class="language-js">console.log(inventario.indexOf(&quot;fusible&quot;));
+inventario.splice(1, 1);
+console.log(inventario.includes(&quot;fusible&quot;));
+</code></pre>
+<p><code>indexOf()</code> devuelve la posición de la primera coincidencia o <strong>-1</strong> si no encuentra ninguna. <code>splice(1, 1)</code> retira un elemento desde la posición 1. La mochila cambia.</p>
+<h2>BUG detectado: el -1 peligroso</h2>
+<p>Si buscas una pieza inexistente obtienes -1. Pasar ese -1 a <code>splice(-1, 1)</code> retiraría la última pieza: no significaría «no hagas nada». Debemos comprobar antes de modificar.</p>
+<h2>Nivel 2: construye</h2>
+<p>Escribe una decisión que retire <code>&quot;cable&quot;</code> solo cuando está presente. Si falta, muestra un mensaje. Prueba dos veces: la segunda debe conservar las demás piezas.</p>
+<h2>Nivel 3: desafío — La mochila que no pierde piezas</h2>
+<p>Crea <code>usarPieza(pieza)</code>. Debe retirar exactamente una coincidencia y devolver <code>true</code>; si la pieza no existe, debe devolver <code>false</code> sin cambiar nada.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>Busca la posición. Si vale -1, termina antes de retirar. Si es válida, retira una pieza y confirma el resultado.</p>
+</details>
+
+<details class="solution"><summary>Solución posible — esta función se incorpora al proyecto</summary>
+
+<pre><code class="language-js">function usarPieza(pieza) {
+  const posicion = inventario.indexOf(pieza);
+  if (posicion === -1) return false;
+  inventario.splice(posicion, 1);
+  return true;
+}
+</code></pre>
+<p>Cuando un <code>if</code> controla una sola instrucción, puede escribirse sin llaves. Aquí esa instrucción es <code>return false</code>. Usaremos esta forma breve para algunas comprobaciones; si añades varias instrucciones a la condición, necesitarás llaves.</p>
+<p><code>posicion</code> vive dentro de la función. El array <code>inventario</code>, creado fuera, está disponible para ella.</p>
+</details>
+
+<h3>Ruta: punto de control obligatorio</h3>
+<p>Si ya definiste <code>usarPieza</code>, conserva tu versión si cumple las reglas. En caso contrario, incorpora la solución anterior. Después limpia las piezas de entrenamiento:</p>
+<pre><code class="language-js">inventario.length = 0;
+console.log(inventario.length);
+energia = 100;
+</code></pre>
+<p>Asignar 0 a la longitud vacía este array sin reasignar la constante. Debes ver <code>0</code>.</p>
+<h2>Misión de memoria</h2>
+<p>Imagina una reparación que necesita energía y un cable. Explica en qué orden comprobarías ambas cosas para evitar gastar recursos cuando falta algo. Todavía no la programes completa.</p>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> mochila y consumo seguro. <strong>Logro:</strong> inventario operativo.</p>
+<p><strong>Tu arsenal:</strong> arrays, índices, propiedades, métodos que consultan y métodos que modifican.</p>
+<p><strong>Continuará…</strong> LUMA descubre que cada sector tiene su propia pieza y su propia historia.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="7"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="6">← Anterior</button><button data-go="8">Siguiente →</button></div></section>
+<section class="page" id="pagina-8" data-page="8" hidden><h1>Capítulo 8 — Tres sectores, tres historias</h1>
+<p><strong>Tiempo orientativo: 20–25 minutos · Objetivo: representar el mapa y su progreso.</strong></p>
+<h2>La historia</h2>
+<p>Hay tres sectores: Hangar, Laboratorio y Antena. Cada uno tiene un nombre, una pieza y una baliza. Esos datos deben viajar juntos.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>Si guardas el nombre de un sector y su estado por separado, ¿cómo evitarás confundir qué baliza está reparada?</p>
+<h2>Experimenta · Ruta: prepara el mapa</h2>
+<pre><code class="language-js">const sectores = [];
+</code></pre>
+<p>Añade el primer sector con un <strong>objeto</strong>:</p>
+<pre><code class="language-js">sectores.push({
+  nombre: &quot;Hangar&quot;, pieza: &quot;cable&quot;,
+  explorado: false, reparada: false,
+  registro: null
+});
+</code></pre>
+<p>El objeto reúne propiedades con nombre. Las parejas se separan por comas. Las llaves aquí crean un objeto; no son el bloque de una decisión.</p>
+<h3>Ruta: añade los otros dos</h3>
+<pre><code class="language-js">sectores.push({
+  nombre: &quot;Laboratorio&quot;, pieza: &quot;fusible&quot;,
+  explorado: false, reparada: false,
+  registro: null
+});
+</code></pre>
+<pre><code class="language-js">sectores.push({
+  nombre: &quot;Antena&quot;, pieza: &quot;bateria&quot;,
+  explorado: false, reparada: false,
+  registro: null
+});
+</code></pre>
+<p>Estos tres <code>push()</code> se ejecutan una sola vez. Repetirlos duplicaría el mapa.</p>
+<h2>Lee una propiedad · Ruta</h2>
+<pre><code class="language-js">console.log(sectores[0].nombre);
+console.log(sectores[0].reparada);
+console.log(sectores[0].registro);
+</code></pre>
+<p>Obtendrás <code>Hangar</code>, <code>false</code> y <code>null</code>. Primero eliges el elemento 0 del array; después accedes a una propiedad usando un punto.</p>
+<h2>Dos ausencias diferentes</h2>
+<p><code>null</code> lo hemos puesto a propósito: <strong>todavía no recuperamos el registro</strong>.</p>
+<p>Una propiedad inexistente devuelve <code>undefined</code>:</p>
+<pre><code class="language-js">console.log(sectores[0].regsitro);
+console.log(sectores[9]);
+</code></pre>
+<p>La primera propiedad está mal escrita; el segundo índice no está en el mapa. En ambos casos aparece <code>undefined</code>. No todos los <code>undefined</code> son errores: también los devuelve una función sin resultado explícito, como vimos antes.</p>
+<p>No sigas con <code>sectores[9].nombre</code>: intentar leer una propiedad de <code>undefined</code> produciría un <code>TypeError</code>. Primero comprueba que el sector existe.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Marca temporalmente <code>sectores[0].reparada = true;</code>. Consulta esa propiedad y la del sector 1. Solo debe cambiar la primera. Después devuelve la primera a <code>false</code>.</p>
+<h2>Nivel 2: construye</h2>
+<p>Muestra una frase con el nombre del Laboratorio y la pieza que necesita. Reutiliza el informe con valores insertados que ya sabes construir.</p>
+<h2>Ruta: los registros guardados</h2>
+<p>Estos textos son archivos de la estación. Se entregarán durante la exploración; escribirlos no marca los sectores como explorados.</p>
+<pre><code class="language-js">const registros = [
+  &quot;Iris: no hubo sabotaje. Apagamos las balizas.&quot;,
+  &quot;Iris: la tormenta convertía la antena en un peligro.&quot;,
+  &quot;Sensor: tormenta terminada. Transmisión segura.&quot;
+];
+</code></pre>
+<h2>Nivel 3: desafío — Recupera un registro sin inventarlo</h2>
+<p>Asigna al registro del Laboratorio el texto correspondiente del array <code>registros</code>. Muéstralo en consola. No cambies los otros dos sectores.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>El Laboratorio tiene índice 1 en ambos arrays. Accede primero al sector, después a su propiedad y asígnale el texto correspondiente.</p>
+</details>
+
+<details class="solution"><summary>Solución posible</summary>
+
+<pre><code class="language-js">sectores[1].registro = registros[1];
+console.log(sectores[1].registro);
+</code></pre>
+<p>Modificas una propiedad del objeto que ya está en el array. No creas otro sector.</p>
+</details>
+
+<h2>Punto de control · Ruta</h2>
+<p>Restaura las pruebas para que la exploración del juego recupere los registros por sí misma:</p>
+<pre><code class="language-js">sectores[0].reparada = false;
+sectores[1].registro = null;
+console.log(sectores.length);
+</code></pre>
+<p>Debes tener exactamente tres sectores, todos sin explorar, sin reparar y con <code>registro: null</code>. Inventario vacío y energía 100.</p>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> mapa con estados independientes. <strong>Logro:</strong> estación cartografiada.</p>
+<p><strong>Tu arsenal:</strong> objetos, propiedades, arrays de objetos, <code>null</code> y <code>undefined</code>.</p>
+<p><strong>Continuará…</strong> El guardián exige un informe de todas las balizas. No quiere tres instrucciones copiadas a mano.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="8"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="7">← Anterior</button><button data-go="9">Siguiente →</button></div></section>
+<section class="page" id="pagina-9" data-page="9" hidden><h1>Capítulo 9 — El recorrido de mantenimiento</h1>
+<p><strong>Tiempo orientativo: 20–25 minutos · Objetivo: revisar una colección sin duplicar instrucciones.</strong></p>
+<h2>La historia</h2>
+<p>El guardián de comunicaciones pregunta cuántas balizas siguen apagadas. Si mañana hubiera más sectores, copiar el informe una y otra vez sería una mala herramienta. Necesitamos recorrer el mapa.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>Con tres sectores, ¿qué índices hay que visitar? ¿Debemos llegar hasta 3 o detenernos antes?</p>
+<h2>Experimenta · Ruta</h2>
+<pre><code class="language-js">for (let indice = 0; indice &lt; sectores.length; indice = indice + 1) {
+  console.log(sectores[indice].nombre);
+}
+</code></pre>
+<p>Obtendrás Hangar, Laboratorio y Antena. Un <strong>bucle</strong> repite instrucciones. En este <code>for</code>, empezamos en 0, continuamos mientras el índice sea menor que la longitud y aumentamos el índice al terminar cada vuelta.</p>
+<p>El último índice es 2. Usar <code>&lt;= sectores.length</code> intentaría acceder también al 3, que no existe. Esa es una pista frecuente cuando un recorrido falla al final.</p>
+<h2>Una inspección que devuelve una colección · Ruta</h2>
+<pre><code class="language-js">function pendientes() {
+  return sectores.filter(function (sector) {
+    return !sector.reparada;
+  });
+}
+</code></pre>
+<p>Antes de ejecutar <code>console.log(pendientes().length);</code>, predice el resultado. Debe ser 3.</p>
+<p><code>filter()</code> crea un nuevo array con los elementos que pasan una comprobación. Recibe una función: la ejecuta para cada sector. Esa función devuelve <code>true</code> cuando debemos conservarlo. Se suele llamar <strong>callback</strong> a una función entregada a otra para que la use.</p>
+<p>No estamos copiando profundamente los objetos. Los elementos seleccionados siguen siendo los mismos sectores. Aquí consultamos su cantidad, sin modificarlos.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Marca temporalmente la baliza del Hangar como reparada. Consulta la cantidad pendiente y restaura el estado:</p>
+<pre><code class="language-js">sectores[0].reparada = true;
+console.log(pendientes().length);
+sectores[0].reparada = false;
+</code></pre>
+<h2>Nivel 2: construye</h2>
+<p>Amplía el recorrido para mostrar el nombre de cada sector y si su baliza está reparada. No alteres ningún estado.</p>
+<h2>Otro tipo de repetición: la cuenta de LUMA</h2>
+<p>Necesitamos una cuenta regresiva de diagnóstico, sin espera real entre mensajes. Predice cuándo termina:</p>
+<pre><code class="language-js">let cuenta = 3;
+while (cuenta &gt; 0) {
+  console.log(`Comprobación ${cuenta}`);
+  cuenta = cuenta - 1;
+}
+</code></pre>
+<p><code>while</code> repite <strong>mientras</strong> la condición sea verdadera. Muestra 3, 2 y 1; después <code>cuenta</code> vale 0 y se detiene. Si repites el bloque sin restaurar la cuenta, no habrá vueltas.</p>
+<p><strong>BUG para inspeccionar, no para ejecutar:</strong> si quitáramos <code>cuenta = cuenta - 1</code>, la condición nunca cambiaría. Podríamos bloquear la pestaña con un bucle infinito. Antes de ejecutar un <code>while</code>, identifica qué cambia y cuándo la condición deja de cumplirse.</p>
+<h2>Nivel 3: desafío — El informe que decide</h2>
+<p>Construye <code>informeBalizas()</code>: muestra el estado de todos los sectores y devuelve el número de balizas pendientes. Quien llama a la función debe poder usar ese número.</p>
+<details class="hint"><summary>Pista</summary>
+
+<p>Mostrar cada sector y devolver un total son tareas distintas. Después del recorrido puedes consultar una función que ya existe.</p>
+</details>
+
+<details class="solution"><summary>Solución posible</summary>
+
+<pre><code class="language-js">function informeBalizas() {
+  for (let indice = 0; indice &lt; sectores.length; indice = indice + 1) {
+    console.log(`${sectores[indice].nombre}: ${sectores[indice].reparada}`);
+  }
+  return pendientes().length;
+}
+</code></pre>
+<p>Prueba <code>console.log(informeBalizas());</code>. Verás tres mensajes y el total. El <code>return</code> va después del bucle: si estuviera dentro, terminaría en la primera vuelta.</p>
+</details>
+
+<h2>Ruta · Reemplaza verEstado</h2>
+<p>Ahora la mochila y las balizas forman parte del informe. Reemplaza la definición anterior con esta versión completa. La declaración de función permite redefinirla en nuestro laboratorio.</p>
+<pre><code class="language-js">function verEstado() {
+  console.log(`${nombre} en ${estacion}. Energía: ${energia}`);
+  console.log(`Inventario: ${inventario.join(&quot;, &quot;)}`);
+  console.log(`Pendientes: ${pendientes().length}. Señal enviada: ${senalEnviada}`);
+}
+</code></pre>
+<p><code>join(&quot;, &quot;)</code> devuelve un string con los elementos separados por coma y espacio. No cambia la mochila; si está vacía, devuelve un texto vacío.</p>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> inspección general y búsqueda de pendientes. <strong>Logro:</strong> diagnóstico automático.</p>
+<p><strong>Tu arsenal:</strong> <code>for</code>, <code>while</code>, callbacks, <code>filter()</code> y <code>join()</code>.</p>
+<p><strong>Punto de control · Ruta:</strong></p>
+<pre><code class="language-js">verEstado();
+</code></pre>
+<p>Debe mostrar energía 100, mochila vacía, tres pendientes y señal <code>false</code>.</p>
+<p><strong>Continuará…</strong> El receptor despierta. Entre los mensajes ambientales aparece la prueba de que la tormenta terminó.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="9"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="8">← Anterior</button><button data-go="10">Siguiente →</button></div></section>
+<section class="page" id="pagina-10" data-page="10" hidden><h1>Capítulo 10 — Ecos de la tormenta</h1>
+<p><strong>Tiempo orientativo: 25–30 minutos · Objetivo: convertir los datos en acciones completas.</strong></p>
+<h2>La historia</h2>
+<p>La estación no fue saboteada. Iris apagó las balizas porque la tormenta hacía peligrosa la transmisión. El sensor de la Antena confirma que el peligro terminó. Podemos reparar las comunicaciones.</p>
+<p>Mientras avanzas, LUMA recibe ecos distintos. Esos mensajes ambientan la exploración; ninguno te quita recursos ni oculta una pieza necesaria.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>¿Cómo elegir un mensaje distinto sin escribir una decisión para cada posibilidad?</p>
+<h2>Experimenta · Ruta</h2>
+<pre><code class="language-js">const ecos = [&quot;Se oye un zumbido.&quot;, &quot;LUMA detecta luz.&quot;, &quot;El pasillo está en silencio.&quot;];
+console.log(Math.random());
+</code></pre>
+<p><code>Math.random()</code> produce un número desde 0, incluido, hasta 1, excluido. No esperamos el mismo resultado cada vez.</p>
+<h3>Ruta: conviértelo en una posición</h3>
+<pre><code class="language-js">function eco() {
+  const indice = Math.floor(Math.random() * ecos.length);
+  return ecos[indice];
+}
+</code></pre>
+<p>Multiplicar por 3 produce un número menor que 3. <code>Math.floor()</code> redondea hacia abajo: obtenemos 0, 1 o 2. Esos son los índices de nuestros mensajes.</p>
+<h2>Nivel 1: modifica</h2>
+<p>Llama varias veces a <code>eco()</code> y muestra su resultado. Los mensajes pueden repetirse: aleatorio no significa «siempre diferente». Añade un mensaje propio con <code>ecos.push(...)</code>; la función seguirá usando la longitud actual.</p>
+<h2>Nivel 2: construye — La orden de exploración</h2>
+<p>Ya tienes todas las piezas del sistema. Vamos a conectarlas sin añadir una regla nueva.</p>
+<h3>Ruta: valida el mapa</h3>
+<pre><code class="language-js">function sectorValido(indice) {
+  return indice === 0 || indice === 1 || indice === 2;
+}
+</code></pre>
+<p>En esta estación solo aceptamos esos tres índices numéricos. Un índice inexistente, un texto como <code>&quot;0&quot;</code> o una llamada sin índice será rechazado.</p>
+<h3>Construye explorar en cuatro tramos</h3>
+<p>Esta función necesita varias comprobaciones. <strong>Los cuatro fragmentos siguientes forman una única entrada.</strong> Escribe el primer tramo, usa Shift + Enter para continuar y añade los demás. No ejecutes hasta escribir la llave final del cuarto tramo. Si preparas el texto fuera de la consola, reúne los cuatro fragmentos en orden.</p>
+<p><strong>Tramo 1: comprueba que la acción puede comenzar.</strong></p>
+<pre><code class="language-js">function explorar(indice) {
+  if (!sectorValido(indice)) return avisar(&quot;Ese sector no existe.&quot;);
+  if (senalEnviada) return avisar(&quot;La misión ya terminó.&quot;);
+  const sector = sectores[indice];
+</code></pre>
+<p><strong>Tramo 2: impide cobros repetidos o sin energía.</strong></p>
+<pre><code class="language-js">  if (sector.explorado) return avisar(`Ya exploraste ${sector.nombre}.`);
+  if (!puedePagar(10)) return avisar(&quot;Necesitas 10 puntos para explorar.&quot;);
+  energia = energia - 10;
+</code></pre>
+<p><strong>Tramo 3: entrega la pieza y guarda el descubrimiento.</strong></p>
+<pre><code class="language-js">  inventario.push(sector.pieza);
+  sector.explorado = true;
+  sector.registro = registros[indice];
+</code></pre>
+<p><strong>Tramo 4: cuenta lo ocurrido y cierra la función.</strong></p>
+<pre><code class="language-js">  return avisar(`${sector.nombre}: recogiste ${sector.pieza}. ${eco()} ${sector.registro}`);
+}
+</code></pre>
+<h2>Antes de ejecutar la orden…</h2>
+<p>Si llamas dos veces a <code>explorar(0)</code>, ¿deberías pagar 20 y obtener dos cables? ¿Qué comprobación lo evita?</p>
+<h3>Prueba · Ruta</h3>
+<pre><code class="language-js">explorar(0);
+explorar(0);
+verEstado();
+</code></pre>
+<p>Debes tener 90 de energía, un cable y tres balizas pendientes. Explorar y reparar son acciones diferentes.</p>
+<h2>Nivel 3: desafío — La reparación completa</h2>
+<p>Crea <code>reparar(indice)</code> con estas reglas:</p>
+<ul>
+<li>El sector debe existir y la misión debe seguir activa.</li>
+<li>Debes haber explorado el sector.</li>
+<li>Una baliza ya reparada no consume recursos.</li>
+<li>Necesitas 15 puntos y su pieza correspondiente.</li>
+<li>Solo después de las comprobaciones se consume una pieza, se descuentan 15 y se marca la reparación.</li>
+</ul>
+<p>Pausa aquí. Intenta construir tu solución con lo que ya sabes.</p>
+<details class="hint"><summary>Pista 1 — El orden importa</summary>
+
+<p>Rechaza primero las acciones inválidas. Evita retirar una pieza si después vas a descubrir que no hay energía suficiente.</p>
+</details>
+
+<details class="hint"><summary>Pista 2 — Reutiliza</summary>
+
+<p><code>sectorValido</code>, <code>puedePagar</code>, <code>usarPieza</code> y <code>avisar</code> ya resuelven partes del problema. Cada salida anticipada protege el resto de la función.</p>
+</details>
+
+<details class="solution"><summary>Solución posible — cuatro tramos de una sola función</summary>
+
+<p>Igual que antes, reúne los tramos antes de ejecutar. Si tu versión ya funciona, no tienes que sustituirla.</p>
+<pre><code class="language-js">function reparar(indice) {
+  if (!sectorValido(indice)) return avisar(&quot;Ese sector no existe.&quot;);
+  if (senalEnviada) return avisar(&quot;La misión ya terminó.&quot;);
+  const sector = sectores[indice];
+</code></pre>
+<pre><code class="language-js">  if (!sector.explorado) return avisar(&quot;Primero explora este sector.&quot;);
+  if (sector.reparada) return avisar(&quot;Esta baliza ya está reparada.&quot;);
+  if (!puedePagar(15)) return avisar(&quot;Necesitas 15 puntos para reparar.&quot;);
+</code></pre>
+<pre><code class="language-js">  if (!usarPieza(sector.pieza)) return avisar(`Falta la pieza: ${sector.pieza}.`);
+  energia = energia - 15;
+  sector.reparada = true;
+</code></pre>
+<pre><code class="language-js">  return avisar(`Baliza del ${sector.nombre} reparada. Quedan ${energia} puntos.`);
+}
+</code></pre>
+<p>La energía se comprueba antes de consumir la pieza. <code>usarPieza</code> devuelve <code>false</code> sin modificar la mochila cuando falta el componente. Una reparación válida modifica una sola baliza.</p>
+</details>
+
+<h2>Ruta: comprueba la reparación</h2>
+<p>Asegúrate de tener una versión correcta de <code>reparar</code> antes de ejecutar:</p>
+<pre><code class="language-js">reparar(0);
+reparar(0);
+verEstado();
+</code></pre>
+<p>Debes tener energía 75, mochila vacía y dos pendientes. La segunda reparación no cobra nada.</p>
+<h2>Misión de memoria</h2>
+<p>¿Cómo comprobarías que un sector desconocido no gasta energía? Guarda mentalmente el valor actual, prueba <code>explorar(9)</code> y consulta el informe. No necesitas una nueva herramienta.</p>
+<h2>Punto de control · Ruta: restaura para el jefe final</h2>
+<p>Estas pruebas fueron una simulación. Conservamos las funciones y devolvemos la partida al inicio:</p>
+<pre><code class="language-js">energia = 100;
+senalEnviada = false;
+inventario.length = 0;
+</code></pre>
+<p>El siguiente bloque es un recorrido completo. Escribe todas sus líneas antes de ejecutarlo:</p>
+<pre><code class="language-js">for (let indice = 0; indice &lt; sectores.length; indice = indice + 1) {
+  sectores[indice].explorado = false;
+  sectores[indice].reparada = false;
+  sectores[indice].registro = null;
+}
+</code></pre>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> explorar y reparar con consecuencias reales. <strong>Logro:</strong> motor de la estación.</p>
+<p><strong>Tu arsenal:</strong> azar controlado, índices aleatorios e integración de funciones.</p>
+<p><strong>Continuará…</strong> El guardián ofrece dos transmisiones: una petición breve de rescate o un informe que preserve la historia de Iris.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="10"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="9">← Anterior</button><button data-go="11">Siguiente →</button></div></section>
+<section class="page" id="pagina-11" data-page="11" hidden><h1>Capítulo 11 — El guardián de comunicaciones</h1>
+<p><strong>Tiempo orientativo: 25–30 minutos · Objetivo: completar un juego verificable.</strong></p>
+<h2>La historia</h2>
+<p>El guardián no es un enemigo. Fue diseñado para impedir transmisiones peligrosas. El sensor confirma que la tormenta terminó, pero el sistema exige las tres balizas reparadas.</p>
+<p>—Demuestra que tus reglas funcionan —dice—. Después podrás decidir qué mensaje dejará esta estación.</p>
+<h2>Jefe final: requisitos antes de recibir código</h2>
+<p>Construye dos órdenes nuevas:</p>
+<p><strong><code>transmitir(mensaje)</code></strong></p>
+<ul>
+<li>Bloquea una transmisión si todavía hay balizas pendientes.</li>
+<li>Acepta exactamente <code>&quot;rescate&quot;</code> o <code>&quot;informe&quot;</code>.</li>
+<li>Una transmisión válida cambia <code>senalEnviada</code> a <code>true</code>.</li>
+<li>Guarda la elección en una nueva variable llamada <code>mensajeFinal</code>.</li>
+<li>No permite transmitir otra vez en esa partida.</li>
+<li>Muestra un desenlace distinto según la elección. Ambos permiten el rescate; el informe también preserva el motivo del apagado.</li>
+</ul>
+<p><strong><code>reiniciar()</code></strong></p>
+<ul>
+<li>Restaura energía 100, señal <code>false</code> y <code>mensajeFinal</code> a <code>null</code>.</li>
+<li>Vacía el inventario.</li>
+<li>Restaura todos los sectores sin explorar, sin reparar y con registro <code>null</code>.</li>
+<li>Conserva tu nombre y las reglas del juego.</li>
+</ul>
+<p>El resto del motor debe seguir impidiendo energía negativa, piezas duplicadas y reparaciones repetidas.</p>
+<h2>Antes de empezar…</h2>
+<p>¿Qué dato ya te dice si faltan balizas? ¿Qué deberías comprobar antes de cambiar <code>senalEnviada</code>? ¿Qué elementos no debería borrar un reinicio?</p>
+<h3>Ruta: recuerda la decisión final</h3>
+<pre><code class="language-js">let mensajeFinal = null;
+</code></pre>
+<h2>Ahora tú</h2>
+<p><strong>Nivel 1 — Modifica:</strong> redacta dos desenlaces breves.</p>
+<p><strong>Nivel 2 — Construye:</strong> implementa la transmisión y prueba que se bloquea al inicio.</p>
+<p><strong>Nivel 3 — Desafío:</strong> implementa el reinicio completo y verifica que una segunda partida comienza limpia.</p>
+<p>Dedica un intento real antes de abrir las pistas. No tienes que escribir una solución idéntica a la del libro.</p>
+<details class="hint"><summary>Pista 1 — Revisa lo que ya existe</summary>
+
+<p><code>pendientes()</code> entrega un array. Su longitud indica cuántas reparaciones faltan. El mapa y el inventario ya pueden recorrerse o vaciarse.</p>
+</details>
+
+<details class="hint"><summary>Pista 2 — Separa comprobar de cambiar</summary>
+
+<p>En la transmisión, usa salidas anticipadas para los rechazos. Solo cambia la señal y la elección cuando todas las condiciones se cumplen.</p>
+</details>
+
+<details class="hint"><summary>Pista 3 — Reiniciar no es recargar</summary>
+
+<p>Reutiliza el recorrido del punto de control del capítulo 10 dentro de una función. Conserva los objetos y cambia sus propiedades. Si recargas, pierdes también las funciones.</p>
+</details>
+
+<details class="solution"><summary>Solución posible — transmitir</summary>
+
+<p>Reúne estos tres tramos en una única definición antes de ejecutarlos:</p>
+<pre><code class="language-js">function transmitir(mensaje) {
+  if (senalEnviada) return avisar(&quot;La señal ya fue enviada.&quot;);
+  if (pendientes().length &gt; 0) return avisar(&quot;Todavía hay balizas pendientes.&quot;);
+</code></pre>
+<pre><code class="language-js">  if (mensaje !== &quot;rescate&quot; &amp;&amp; mensaje !== &quot;informe&quot;) return avisar(&quot;Elige rescate o informe.&quot;);
+  senalEnviada = true;
+  mensajeFinal = mensaje;
+</code></pre>
+<pre><code class="language-js">  if (mensaje === &quot;informe&quot;) return avisar(&quot;Informe enviado. La historia de Iris está a salvo. Rescate en camino.&quot;);
+  return avisar(&quot;Petición enviada. Una nave de rescate responde.&quot;);
+}
+</code></pre>
+<p><code>!==</code> significa «no es igual», sin conversión automática de tipos. La elección se rechaza si es diferente de las dos opciones. Una llamada sin mensaje también se rechaza sin cambiar la partida.</p>
+</details>
+
+<details class="solution"><summary>Solución posible — reiniciar</summary>
+
+<p>Reúne los tres tramos antes de ejecutar:</p>
+<pre><code class="language-js">function reiniciar() {
+  energia = 100;
+  senalEnviada = false;
+  mensajeFinal = null;
+  inventario.length = 0;
+</code></pre>
+<pre><code class="language-js">  for (let indice = 0; indice &lt; sectores.length; indice = indice + 1) {
+    sectores[indice].explorado = false;
+    sectores[indice].reparada = false;
+    sectores[indice].registro = null;
+  }
+</code></pre>
+<pre><code class="language-js">  return avisar(&quot;Nueva partida. LUMA vuelve a encenderse.&quot;);
+}
+</code></pre>
+<p>No declaramos otra vez las variables y no reasignamos las constantes. Restauramos los valores y el contenido de las colecciones existentes.</p>
+</details>
+
+<h2>Ruta: examen del guardián</h2>
+<p>Si elegiste tu propia solución, comprueba que cumple las reglas. Antes de avanzar deben existir ambas funciones.</p>
+<h3>1. Una misión incompleta no transmite</h3>
+<p>Predice el valor de la señal después de la prueba:</p>
+<pre><code class="language-js">reiniciar();
+transmitir(&quot;rescate&quot;);
+console.log(senalEnviada);
+</code></pre>
+<p>Debes ver un rechazo y <code>false</code>.</p>
+<h3>2. No hay energía, no hay gasto</h3>
+<pre><code class="language-js">energia = 5;
+explorar(0);
+console.log(energia, inventario.length);
+reiniciar();
+</code></pre>
+<p>Debe conservar 5 y una mochila de longitud 0. Luego vuelve a 100 con el reinicio.</p>
+<h3>3. Una acción repetida no cobra de nuevo</h3>
+<pre><code class="language-js">explorar(0);
+explorar(0);
+reparar(0);
+reparar(0);
+verEstado();
+</code></pre>
+<p>Resultado: energía 75, inventario vacío y dos pendientes.</p>
+<h3>4. La ruta completa termina</h3>
+<p>Antes de ejecutar, calcula cuánta energía quedará:</p>
+<pre><code class="language-js">explorar(1);
+reparar(1);
+explorar(2);
+reparar(2);
+</code></pre>
+<p>Ahora elige tu desenlace. Esta es una posibilidad:</p>
+<pre><code class="language-js">transmitir(&quot;informe&quot;);
+console.log(energia, pendientes().length, senalEnviada);
+console.log(mensajeFinal);
+</code></pre>
+<p>Debes obtener <code>25 0 true</code> y <code>informe</code>. Si elegiste <code>rescate</code>, el último valor será <code>rescate</code>.</p>
+<h3>5. El final también protege los recursos</h3>
+<pre><code class="language-js">transmitir(&quot;rescate&quot;);
+explorar(0);
+console.log(energia);
+</code></pre>
+<p>Las acciones se rechazan y la energía sigue en 25.</p>
+<h2>Si algo falla, sigue la pista</h2>
+<ol>
+<li>Lee la categoría del error y el nombre señalado.</li>
+<li>Busca comillas, paréntesis, llaves o nombres distintos.</li>
+<li>Si no hay mensaje de error, compara el resultado con la regla esperada.</li>
+<li>Consulta el estado antes y después de una sola acción.</li>
+<li>Corrige la definición completa de la función y repite únicamente la prueba necesaria.</li>
+</ol>
+<p>Cuando una prueba falla después de cambiar recursos, reinicia antes de volver a intentarla. Los errores de lógica se investigan con resultados observables.</p>
+<h2>Misión extra</h2>
+<p>Adapta la transmisión para aceptar <code>&quot; INFORME &quot;</code> sin cambiar las opciones válidas. Pista: antes de limpiar el texto, decide cómo vas a tratar una llamada sin argumento. Esta ampliación es opcional y no se utiliza después.</p>
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> un juego completo con dos finales y reinicio. <strong>Logro:</strong> señal restablecida.</p>
+<p><strong>Tu arsenal:</strong> composición de reglas, pruebas de comportamiento y depuración.</p>
+<p><strong>Punto de control · Ruta:</strong></p>
+<pre><code class="language-js">reiniciar();
+verEstado();
+</code></pre>
+<p>Energía 100, tres pendientes, señal <code>false</code>, inventario vacío y <code>mensajeFinal: null</code>.</p>
+<p><strong>Continuará…</strong> La estación ya funciona. Ahora vamos a darle un panel para que otra persona pueda jugar con botones.</p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="11"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="10">← Anterior</button><button data-go="12">Siguiente →</button></div></section>
+<section class="page" id="pagina-12" data-page="12" hidden><h1>Capítulo 12 — La estación vuelve a iluminarse</h1>
+<p><strong>Tiempo orientativo: 25–30 minutos · Objetivo: conectar el juego a una página.</strong></p>
+<h2>La historia</h2>
+<p>LUMA encuentra una pantalla sin controles. El motor ya sabe explorar, reparar y transmitir. No necesita otras reglas: necesita una forma visible de activar las que construiste.</p>
+<h2>Tu misión</h2>
+<p>Crear un título, un indicador de estado, un registro de mensajes y botones. Todo se hará desde la consola del mismo laboratorio. No necesitas escribir un archivo HTML ni instalar nada.</p>
+<p><strong>Comprueba la barra de direcciones:</strong> debe seguir mostrando <code>about:blank</code>. Si has perdido el laboratorio, utiliza la recuperación al final del libro antes de continuar. Ejecuta estas instrucciones una sola vez: repetir las declaraciones con <code>const</code> produciría conflictos.</p>
+<h2>Antes de pulsar Enter…</h2>
+<p>¿Cambiar el fondo de esta página vacía debería modificar la energía del juego?</p>
+<h2>Experimenta · Ruta</h2>
+<pre><code class="language-js">document.body.style.backgroundColor = &quot;#101827&quot;;
+document.body.style.color = &quot;#ecf3ff&quot;;
+document.body.style.fontFamily = &quot;sans-serif&quot;;
+document.body.style.padding = &quot;24px&quot;;
+</code></pre>
+<p><code>document</code> representa la página. <code>document.body</code> es su cuerpo visible. <code>style</code> permite ajustar su apariencia. Cambiar colores no cambia nuestras variables.</p>
+<p>Estas modificaciones afectan la página local de esta pestaña. No significan que hayas modificado un servidor. Al recargar se perderá tanto este panel como la partida creada en la consola.</p>
+<h2>Crea algo que pueda verse · Ruta</h2>
+<pre><code class="language-js">const titulo = document.createElement(&quot;h1&quot;);
+titulo.textContent = &quot;La última señal&quot;;
+document.body.appendChild(titulo);
+</code></pre>
+<p><code>createElement()</code> crea un elemento, pero todavía no lo coloca en pantalla. <code>textContent</code> escribe su texto. <code>appendChild()</code> lo añade a otro elemento: aquí, al cuerpo de la página. <code>h1</code> es un encabezado principal.</p>
+<h3>Ruta: indicador y registro</h3>
+<pre><code class="language-js">const panel = document.createElement(&quot;p&quot;);
+panel.id = &quot;estado&quot;;
+document.body.appendChild(panel);
+</code></pre>
+<pre><code class="language-js">const registro = document.createElement(&quot;pre&quot;);
+registro.textContent = &quot;LUMA: panel conectado.\n&quot;;
+registro.style.whiteSpace = &quot;pre-wrap&quot;;
+document.body.appendChild(registro);
+</code></pre>
+<p><code>pre</code> conserva saltos de línea. <code>\n</code> representa un salto dentro de un string. El estilo permite que los mensajes largos se adapten al espacio disponible.</p>
+<h2>Busca y actualiza · Ruta</h2>
+<pre><code class="language-js">function actualizarPanel() {
+  const indicador = document.querySelector(&quot;#estado&quot;);
+  indicador.textContent = `${nombre} · Energía: ${energia} · Balizas: ${3 - pendientes().length}/3 · Señal: ${senalEnviada}`;
+}
+</code></pre>
+<p><code>querySelector()</code> busca el primer elemento que coincide con un selector. <code>#estado</code> significa «el elemento cuyo id es estado». Si no existe, devuelve <code>null</code>; por eso creamos el indicador antes de usar esta función.</p>
+<p>Predice qué aparecerá y ejecuta:</p>
+<pre><code class="language-js">actualizarPanel();
+</code></pre>
+<h2>Nivel 1: modifica</h2>
+<p>Cambia el color del título mediante <code>titulo.style.color</code>. Elige un color legible sobre el fondo oscuro. Las reglas de energía no deben cambiar.</p>
+<h2>Conecta los mensajes · Reemplaza avisar</h2>
+<p>Antes, <code>avisar</code> solo mostraba texto en consola. Conservamos esa salida y añadimos el registro visual. Reemplaza la función completa:</p>
+<pre><code class="language-js">function avisar(mensaje) {
+  console.log(mensaje);
+  registro.textContent = registro.textContent + mensaje + &quot;\n&quot;;
+  actualizarPanel();
+  return mensaje;
+}
+</code></pre>
+<p>Todas las acciones del juego ya llaman a <code>avisar</code>. Por eso sus mensajes y cambios ahora aparecen en el panel. No duplicamos el cálculo de costes en los botones.</p>
+<h2>Nivel 2: construye — Un botón que activa una orden</h2>
+<p>Una función recibirá un texto y otra función: lo que debe suceder al hacer clic.</p>
+<p><strong>Reúne los dos tramos antes de ejecutar.</strong></p>
+<pre><code class="language-js">function crearBoton(texto, accion) {
+  const boton = document.createElement(&quot;button&quot;);
+  boton.textContent = texto;
+  boton.style.margin = &quot;6px&quot;;
+</code></pre>
+<pre><code class="language-js">  boton.style.padding = &quot;10px&quot;;
+  boton.addEventListener(&quot;click&quot;, accion);
+  document.body.appendChild(boton);
+  return boton;
+}
+</code></pre>
+<p><code>addEventListener()</code> registra una función que el navegador llamará cuando ocurra el evento indicado. <code>&quot;click&quot;</code> corresponde al clic o a la activación del botón mediante teclado.</p>
+<h3>Antes de ejecutar…</h3>
+<p>¿Esta instrucción explora ahora, o prepara algo para cuando pulses el botón?</p>
+<pre><code class="language-js">crearBoton(&quot;Explorar Hangar&quot;, function () { explorar(0); });
+</code></pre>
+<p>Prepara el botón. La función entregada como argumento se ejecuta después, al hacer clic. Si pasáramos <code>explorar(0)</code> directamente, ejecutaríamos la exploración en ese momento y entregaríamos su resultado en lugar de la función que debe atender el clic.</p>
+<h2>Nivel 3: desafío — El panel completo</h2>
+<p>Antes de ver la solución, añade:</p>
+<ul>
+<li>Un botón para reparar el Hangar.</li>
+<li>Exploración y reparación del Laboratorio y de la Antena.</li>
+<li>Los dos tipos de transmisión.</li>
+<li>Un botón de reinicio que limpie el registro y restaure el indicador.</li>
+</ul>
+<p>Los botones deben llamar a las funciones existentes. Una reparación inválida tiene que mostrar su explicación también en la página.</p>
+<details class="hint"><summary>Pista 1 — Cambia los argumentos</summary>
+
+<p>Ya tienes un patrón. Las funciones esperan índices 0, 1 y 2, o los textos rescate e informe.</p>
+</details>
+
+<details class="hint"><summary>Pista 2 — Reiniciar es otra acción</summary>
+
+<p>El callback del botón puede contener varias instrucciones: limpiar el texto del registro y llamar al reinicio. Este último terminará llamando a avisar y actualizará el indicador.</p>
+</details>
+
+<details class="hint"><summary>Pista 3 — Una sola fuente de reglas</summary>
+
+<p>No restes energía ni cambies estados en los callbacks. Deja esas responsabilidades a explorar, reparar y transmitir.</p>
+</details>
+
+<details class="solution"><summary>Solución posible — botones restantes</summary>
+
+<p>Estos fragmentos son independientes; cada uno se puede ejecutar completo. No vuelvas a crear el botón de explorar Hangar que ya tienes.</p>
+<pre><code class="language-js">crearBoton(&quot;Reparar Hangar&quot;, function () { reparar(0); });
+crearBoton(&quot;Explorar Laboratorio&quot;, function () { explorar(1); });
+crearBoton(&quot;Reparar Laboratorio&quot;, function () { reparar(1); });
+</code></pre>
+<pre><code class="language-js">crearBoton(&quot;Explorar Antena&quot;, function () { explorar(2); });
+crearBoton(&quot;Reparar Antena&quot;, function () { reparar(2); });
+</code></pre>
+<pre><code class="language-js">crearBoton(&quot;Pedir rescate&quot;, function () { transmitir(&quot;rescate&quot;); });
+crearBoton(&quot;Enviar informe&quot;, function () { transmitir(&quot;informe&quot;); });
+</code></pre>
+<pre><code class="language-js">crearBoton(&quot;Reiniciar&quot;, function () {
+  registro.textContent = &quot;&quot;;
+  reiniciar();
+});
+</code></pre>
+<p>Si tu solución ya creó alguno de estos botones, no repitas su llamada. Cada llamada a <code>crearBoton</code> añade un botón nuevo.</p>
+</details>
+
+<h2>La prueba final: juega sin escribir órdenes</h2>
+<ol>
+<li>Intenta reparar el Hangar antes de explorarlo. Debe explicar el rechazo y conservar energía 100.</li>
+<li>Explora y repara los tres sectores.</li>
+<li>Repite una reparación. Debe conservar los recursos.</li>
+<li>Envía uno de los mensajes. El indicador debe mostrar señal <code>true</code>, tres balizas y energía 25.</li>
+<li>Reinicia. Debe mostrar energía 100, cero balizas reparadas y señal <code>false</code>.</li>
+<li>Vuelve a jugar y elige el otro desenlace.</li>
+</ol>
+<p>Si has hecho pruebas intermedias antes de añadir todos los botones, comienza esta lista con el botón Reiniciar.</p>
+<h2>BUG detectado: el indicador se quedó atrás</h2>
+<p>Si cambias directamente <code>energia = 50</code> en la consola, el texto del panel no se actualiza por magia. Ejecuta <code>actualizarPanel()</code> para sincronizarlo. En el juego, las acciones hacen esa actualización a través de <code>avisar</code>. Reinicia después de la prueba.</p>
+<h2>Misión extra</h2>
+<p>Añade un botón «Consultar estación» que escriba en el registro cuántas balizas faltan, utilizando <code>avisar</code> y <code>pendientes</code>. También puedes cambiar el estilo de los botones o el título sin alterar las reglas.</p>
+<details class="hint"><summary>Pista de la misión extra</summary>
+
+<p>Construye el mensaje con un template literal dentro del callback y pásalo a avisar. No necesitas una variable nueva.</p>
+</details>
+
+<details class="solution"><summary>Solución posible de la misión extra</summary>
+
+<pre><code class="language-js">crearBoton(&quot;Consultar estación&quot;, function () {
+  avisar(`Balizas pendientes: ${pendientes().length}`);
+});
+</code></pre>
+</details>
+
+<h2>Misión completada</h2>
+<p><strong>Funcionando:</strong> una experiencia visual conectada al mismo motor de consola. <strong>Logro:</strong> estación iluminada.</p>
+<p><strong>Tu arsenal:</strong> elementos, selección, texto, estilos, eventos y callbacks de interfaz.</p>
+<p>LUMA mira la señal en el cielo.</p>
+<p>—Los controles no estaban aquí cuando llegaste. Los construiste tú.</p>
+<p>Empezaste mostrando una frase. Ahora tienes estado, decisiones, colecciones, funciones, comprobaciones, un final y una interfaz. Puedes explicar qué ocurre cuando pulsas un botón y por qué una acción se rechaza.</p>
+<p><strong>La última señal funciona porque tú la programaste.</strong></p>
+<hr>
+<div class="checkpoint"><label><input type="checkbox" data-completed="12"> He completado la misión y revisado su punto de control</label></div><div class="page-nav"><button data-go="11">← Anterior</button><button data-go="13">Siguiente →</button></div></section>
+<section class="page" id="pagina-13" data-page="13" hidden><h1>Epílogo — Tu siguiente expedición</h1>
+<h2>Antes de cambiar de herramienta</h2>
+<p>Intenta responder con tus palabras:</p>
+<ul>
+<li>¿Qué datos necesita recordar la estación?</li>
+<li>¿Qué funciones consultan y cuáles modifican?</li>
+<li>¿Por qué comprobamos recursos antes de consumirlos?</li>
+<li>¿Qué evita recibir dos piezas por explorar dos veces?</li>
+<li>¿Por qué el panel necesita actualizarse después de una acción?</li>
+<li>¿Cómo comprobarías que una mejora no rompe el reinicio?</li>
+</ul>
+<p>No necesitas recitar definiciones. Si puedes explicar una acción desde el clic hasta el cambio de estado, has aprendido a pensar en el programa.</p>
+<h2>Mejoras pequeñas para seguir practicando</h2>
+<ol>
+<li>Añade un informe de sectores al panel.</li>
+<li>Muestra otro mensaje cuando la energía quede por debajo de 30.</li>
+<li>Crea más ecos ambientales sin alterar los requisitos.</li>
+<li>Añade una confirmación narrativa al reiniciar, sin cambiar todavía sus reglas.</li>
+</ol>
+<p>Agregar un cuarto sector requiere revisar también la validación de índices, los costes totales y el indicador de progreso. No basta con añadir un objeto: busca qué reglas suponían que había tres sectores.</p>
+<p>En una segunda expedición podrás guardar la partida, organizar archivos, consultar APIs y publicar una versión permanente. Tu siguiente herramienta será un editor, pero ya llegarás con un juego y una razón concreta para usarlo.</p>
+<h2>Mapa rápido del arsenal</h2>
+<table>
+<thead>
+<tr>
+<th>Si necesitas…</th>
+<th>Busca…</th>
+<th>Capítulo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mostrar una pista</td>
+<td><code>console.log()</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Recordar datos</td>
+<td><code>let</code>, <code>const</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td>Calcular un coste</td>
+<td>Operadores</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Elegir o bloquear</td>
+<td>Comparaciones, <code>if</code>, lógica</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Interpretar una respuesta</td>
+<td>Métodos de strings</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Reutilizar una tarea</td>
+<td>Funciones, parámetros, <code>return</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td>Administrar componentes</td>
+<td>Arrays y métodos</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Describir una entidad</td>
+<td>Objetos y propiedades</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Recorrer o seleccionar</td>
+<td>Bucles, <code>filter()</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td>Variar un mensaje</td>
+<td><code>Math.random()</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td>Integrar y verificar</td>
+<td>Pruebas de comportamiento</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Conectar una página</td>
+<td>DOM y eventos</td>
+<td>12</td>
+</tr>
+</tbody></table>
+<h2>Diccionario de pistas de error</h2>
+<table>
+<thead>
+<tr>
+<th>Pista</th>
+<th>Pregunta útil</th>
+<th>Ejemplo del juego</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SyntaxError</code></td>
+<td>¿Falta cerrar algo? ¿Repetí una declaración?</td>
+<td>Comillas sin cerrar o nombre ya declarado</td>
+</tr>
+<tr>
+<td><code>ReferenceError</code></td>
+<td>¿Existe ese nombre aquí?</td>
+<td><code>energa</code> o una variable fuera de su scope</td>
+</tr>
+<tr>
+<td><code>TypeError</code></td>
+<td>¿La operación sirve para este valor?</td>
+<td>Reasignar <code>const</code> o leer una propiedad de <code>undefined</code></td>
+</tr>
+<tr>
+<td><code>undefined</code> sin error</td>
+<td>¿No hay valor, no hubo retorno o escribí mal una propiedad?</td>
+<td>Sector inexistente o función sin <code>return</code></td>
+</tr>
+<tr>
+<td>Resultado incorrecto sin error</td>
+<td>¿La regla está expresada bien?</td>
+<td>Usar <code>&gt;</code> en vez de <code>&gt;=</code></td>
+</tr>
+</tbody></table>
+<h2>Referencias para consultar después de jugar</h2>
+<p>Estas fuentes documentan las herramientas utilizadas. No necesitas leerlas para completar el libro.</p>
+<ul>
+<li><a href="https://developer.chrome.com/docs/devtools/open">Chrome: abrir DevTools y la consola</a>.</li>
+<li><a href="https://developer.chrome.com/blog/self-xss">Chrome: advertencias de seguridad al pegar código</a>.</li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/const">MDN: const y contenido de objetos</a>.</li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/API/Document/querySelector">MDN: querySelector</a>.</li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener">MDN: addEventListener</a>.</li>
+</ul>
+<p><strong>Autor: Luis Alejandro Castañeda varon</strong></p>
+<div class="page-nav"><button data-go="12">← Anterior</button><button data-go="14">Siguiente →</button></div></section>
+<section class="page" id="pagina-14" data-page="14" hidden><h1>Recuperar el laboratorio</h1>
+<p>Este apéndice contiene respuestas. Ábrelo solo para reconstruir una sesión perdida o revisar tu proyecto terminado.</p>
+<ol>
+<li>Abre una <strong>pestaña nueva</strong> con <code>about:blank</code> y su consola. No reutilices una sesión con nombres declarados.</li>
+<li>Ejecuta los grupos en orden hasta el <strong>último capítulo que completaste</strong>, incluido. Los números omitidos no necesitan definiciones nuevas.</li>
+<li>Cada grupo crea datos o funciones, sin ejecutar la aventura. Los fragmentos largos de funciones deben escribirse completos antes de ejecutar; usa Shift + Enter.</li>
+<li>Recuperar restaura una partida nueva, no las decisiones de tu partida anterior. Si ya terminaste el capítulo 11, puedes llamar a <code>reiniciar()</code>.</li>
+<li>Para volver al panel, recupera los grupos hasta el 11 y repite la ruta del capítulo 12 una sola vez.</li>
+</ol>
+<p>Antes del capítulo 2 no necesitas recuperación; comienza normalmente. Antes del 5 recupera solo el grupo 1–2. Antes del 8 recupera hasta el 7. Antes del 11 recupera hasta el 10. Los datos de pruebas opcionales no se restauran.</p>
+<details class="solution"><summary>Recuperación 1–2 · Memoria inicial</summary>
+
+<pre><code class="language-js">let nombre = &quot;Alex&quot;;
+let energia = 100;
+const estacion = &quot;Nébula&quot;;
+let senalEnviada = false;
+</code></pre>
+<pre><code class="language-js">const robot = &quot;LUMA&quot;;
+</code></pre>
+</details>
+
+<details class="solution"><summary>Recuperación 5 · Textos del terminal</summary>
+
+<pre><code class="language-js">let respuesta = &quot; RESCATE &quot;;
+</code></pre>
+<pre><code class="language-js">const primerRegistro = &quot;Iris: apagamos la señal para proteger la estación.&quot;;
+</code></pre>
+</details>
+
+<details class="solution"><summary>Recuperación 6 · Órdenes de LUMA</summary>
+
+<pre><code class="language-js">function verEstado() {
+  console.log(`${nombre} en ${estacion}`);
+  console.log(`Energía: ${energia}`);
+  console.log(`Señal enviada: ${senalEnviada}`);
+}
+</code></pre>
+<pre><code class="language-js">function puedePagar(coste) {
+  return coste &gt;= 0 &amp;&amp; energia &gt;= coste;
+}
+</code></pre>
+<pre><code class="language-js">function avisar(mensaje) {
+  console.log(mensaje);
+  return mensaje;
+}
+</code></pre>
+</details>
+
+<details class="solution"><summary>Recuperación 7 · Inventario</summary>
+
+<pre><code class="language-js">const inventario = [];
+</code></pre>
+<pre><code class="language-js">function usarPieza(pieza) {
+  const posicion = inventario.indexOf(pieza);
+  if (posicion === -1) return false;
+  inventario.splice(posicion, 1);
+  return true;
+}
+</code></pre>
+</details>
+
+<details class="solution"><summary>Recuperación 8 · Mapa de sectores</summary>
+
+<pre><code class="language-js">const sectores = [];
+</code></pre>
+<pre><code class="language-js">sectores.push({
+  nombre: &quot;Hangar&quot;, pieza: &quot;cable&quot;,
+  explorado: false, reparada: false,
+  registro: null
+});
+</code></pre>
+<pre><code class="language-js">sectores.push({
+  nombre: &quot;Laboratorio&quot;, pieza: &quot;fusible&quot;,
+  explorado: false, reparada: false,
+  registro: null
+});
+</code></pre>
+<pre><code class="language-js">sectores.push({
+  nombre: &quot;Antena&quot;, pieza: &quot;bateria&quot;,
+  explorado: false, reparada: false,
+  registro: null
+});
+</code></pre>
+<pre><code class="language-js">const registros = [
+  &quot;Iris: no hubo sabotaje. Apagamos las balizas.&quot;,
+  &quot;Iris: la tormenta convertía la antena en un peligro.&quot;,
+  &quot;Sensor: tormenta terminada. Transmisión segura.&quot;
+];
+</code></pre>
+</details>
+
+<details class="solution"><summary>Recuperación 9 · Inspección</summary>
+
+<pre><code class="language-js">function pendientes() {
+  return sectores.filter(function (sector) {
+    return !sector.reparada;
+  });
+}
+</code></pre>
+<pre><code class="language-js">function verEstado() {
+  console.log(`${nombre} en ${estacion}. Energía: ${energia}`);
+  console.log(`Inventario: ${inventario.join(&quot;, &quot;)}`);
+  console.log(`Pendientes: ${pendientes().length}. Señal enviada: ${senalEnviada}`);
+}
+</code></pre>
+</details>
+
+<details class="solution"><summary>Recuperación 10 · Exploración y reparación</summary>
+
+<pre><code class="language-js">const ecos = [&quot;Se oye un zumbido.&quot;, &quot;LUMA detecta luz.&quot;, &quot;El pasillo está en silencio.&quot;];
+</code></pre>
+<pre><code class="language-js">function eco() {
+  const indice = Math.floor(Math.random() * ecos.length);
+  return ecos[indice];
+}
+</code></pre>
+<pre><code class="language-js">function sectorValido(indice) {
+  return indice === 0 || indice === 1 || indice === 2;
+}
+</code></pre>
+<pre><code class="language-js">function explorar(indice) {
+  if (!sectorValido(indice)) return avisar(&quot;Ese sector no existe.&quot;);
+  if (senalEnviada) return avisar(&quot;La misión ya terminó.&quot;);
+  const sector = sectores[indice];
+  if (sector.explorado) return avisar(`Ya exploraste ${sector.nombre}.`);
+  if (!puedePagar(10)) return avisar(&quot;Necesitas 10 puntos para explorar.&quot;);
+  energia = energia - 10;
+  inventario.push(sector.pieza);
+  sector.explorado = true;
+  sector.registro = registros[indice];
+  return avisar(`${sector.nombre}: recogiste ${sector.pieza}. ${eco()} ${sector.registro}`);
+}
+</code></pre>
+<pre><code class="language-js">function reparar(indice) {
+  if (!sectorValido(indice)) return avisar(&quot;Ese sector no existe.&quot;);
+  if (senalEnviada) return avisar(&quot;La misión ya terminó.&quot;);
+  const sector = sectores[indice];
+  if (!sector.explorado) return avisar(&quot;Primero explora este sector.&quot;);
+  if (sector.reparada) return avisar(&quot;Esta baliza ya está reparada.&quot;);
+  if (!puedePagar(15)) return avisar(&quot;Necesitas 15 puntos para reparar.&quot;);
+  if (!usarPieza(sector.pieza)) return avisar(`Falta la pieza: ${sector.pieza}.`);
+  energia = energia - 15;
+  sector.reparada = true;
+  return avisar(`Baliza del ${sector.nombre} reparada. Quedan ${energia} puntos.`);
+}
+</code></pre>
+</details>
+
+<details class="solution"><summary>Recuperación 11 · Transmisión y reinicio</summary>
+
+<pre><code class="language-js">let mensajeFinal = null;
+</code></pre>
+<pre><code class="language-js">function transmitir(mensaje) {
+  if (senalEnviada) return avisar(&quot;La señal ya fue enviada.&quot;);
+  if (pendientes().length &gt; 0) return avisar(&quot;Todavía hay balizas pendientes.&quot;);
+  if (mensaje !== &quot;rescate&quot; &amp;&amp; mensaje !== &quot;informe&quot;) return avisar(&quot;Elige rescate o informe.&quot;);
+  senalEnviada = true;
+  mensajeFinal = mensaje;
+  if (mensaje === &quot;informe&quot;) return avisar(&quot;Informe enviado. La historia de Iris está a salvo. Rescate en camino.&quot;);
+  return avisar(&quot;Petición enviada. Una nave de rescate responde.&quot;);
+}
+</code></pre>
+<pre><code class="language-js">function reiniciar() {
+  energia = 100;
+  senalEnviada = false;
+  mensajeFinal = null;
+  inventario.length = 0;
+  for (let indice = 0; indice &lt; sectores.length; indice = indice + 1) {
+    sectores[indice].explorado = false;
+    sectores[indice].reparada = false;
+    sectores[indice].registro = null;
+  }
+  return avisar(&quot;Nueva partida. LUMA vuelve a encenderse.&quot;);
+}
+</code></pre>
+</details>
+
+<h2>Revisa que el estado sea coherente</h2>
+<p>Desde el capítulo 9, <code>verEstado()</code> debe mostrar energía 100, mochila vacía, tres pendientes y señal false. Desde el 11, <code>mensajeFinal</code> empieza en null.</p>
+<p>Si estás volviendo al capítulo 3 o 4, la energía inicial debe ser 100. En el capítulo 7, la mochila comienza vacía antes de las pruebas. Si vuelves a ejecutar un capítulo que ya tiene sus variables recuperadas, omite las declaraciones existentes y repite solo las pruebas o asignaciones.</p>
+<div class="page-nav"><button data-go="13">← Anterior</button></div></section></main></div>
+<script>
+const pages=Array.from(document.querySelectorAll('.page'));
+const labels=["Comienza aquí","Capítulo 1 — ¿Hay alguien ahí?","Capítulo 2 — Lo que la nave recuerda","Capítulo 3 — Cada paso tiene un coste","Capítulo 4 — La puerta que dice no","Capítulo 5 — Un mensaje escrito a medias","Capítulo 6 — LUMA aprende una orden","Capítulo 7 — La mochila de repuestos","Capítulo 8 — Tres sectores, tres historias","Capítulo 9 — El recorrido de mantenimiento","Capítulo 10 — Ecos de la tormenta","Capítulo 11 — El guardián de comunicaciones","Capítulo 12 — La estación vuelve a iluminarse","Epílogo y arsenal","Recuperar el laboratorio"];
+const key='ultima-senal-lectura-v1';
+let completed=[],current=0;
+try{const saved=JSON.parse(localStorage.getItem(key)||'{}');completed=Array.isArray(saved.completed)?saved.completed.filter(x=>Number.isInteger(x)&&x>=1&&x<=12):[];current=Number.isInteger(saved.current)?saved.current:0;}catch{}
+function save(){try{localStorage.setItem(key,JSON.stringify({completed,current}));}catch{}}
+function update(){const count=new Set(completed).size;document.querySelector('.progress-fill').style.width=(count/12*100)+'%';document.querySelector('.progress-label').textContent=count+' de 12 misiones completadas';document.querySelector('[role=progressbar]').setAttribute('aria-valuenow',count);document.querySelectorAll('[data-completed]').forEach(x=>x.checked=completed.includes(Number(x.dataset.completed)));document.querySelectorAll('.nav-link').forEach(x=>x.classList.toggle('completed',completed.includes(Number(x.dataset.go))));}
+function show(index,move=true){current=Math.max(0,Math.min(pages.length-1,index));pages.forEach((p,i)=>p.hidden=i!==current);document.querySelectorAll('.nav-link').forEach(x=>{if(Number(x.dataset.go)===current)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current');});document.querySelector('#reading-status').textContent=labels[current];document.title=labels[current]+' · La última señal';history.replaceState(null,'','#pagina-'+current);save();if(move){window.scrollTo(0,0);const title=pages[current].querySelector('h1');if(title){title.setAttribute('tabindex','-1');title.focus({preventScroll:true});}}}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.go))));
+document.querySelectorAll('[data-completed]').forEach(c=>c.addEventListener('change',()=>{const n=Number(c.dataset.completed);completed=completed.filter(x=>x!==n);if(c.checked)completed.push(n);update();save();}));
+document.querySelector('.mobile-menu').addEventListener('click',function(){const on=document.querySelector('nav').classList.toggle('expanded');this.setAttribute('aria-expanded',on);this.textContent=on?'Ocultar índice':'Mostrar índice';});
+document.querySelector('#reset-reading').addEventListener('click',()=>{if(confirm('¿Borrar las marcas de lectura? Esto no modifica tu laboratorio ni la partida.')){completed=[];update();save();}});
+let openBefore=[];window.addEventListener('beforeprint',()=>{openBefore=Array.from(document.querySelectorAll('details')).map(d=>d.open);document.querySelectorAll('details').forEach(d=>d.open=true);});window.addEventListener('afterprint',()=>document.querySelectorAll('details').forEach((d,i)=>d.open=!!openBefore[i]));
+document.querySelector('#print-book').addEventListener('click',()=>window.print());
+const hash=location.hash.match(/^#pagina-([0-9]+)$/);show(hash?Number(hash[1]):current,false);update();
+</script></body></html>
